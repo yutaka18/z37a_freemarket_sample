@@ -8,15 +8,11 @@ class ApplicationController < ActionController::Base
 
   def production?
     Rails.env.production?
-      logger.debug("production?")
   end
 
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
-      logger.debug("check_logger")
-      logger.debug(ENV["BASIC_AUTH_USER"])
-      logger.debug(ENV["BASIC_AUTH_PASSWORD"])
     end
   end
 
