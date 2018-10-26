@@ -79,3 +79,45 @@
             =link_to 'ログアウト', 'users'
             = fa_icon 'chevron-right', class: 'icon'
 
+      #info-notification-todo
+        .info
+          .info__list
+            %ul.info__list__tabs
+              %li
+                %a.info__list__tabs__notification お知らせ
+              %li
+                %a.info__list__tabs__todo やることリスト
+            %ul.info__list__items--none
+              %li 情報はないよ
+            %ul.info__list__items--active
+              %li
+                %figure
+                  %img.lazyloaded{alt: "", src: "https://static-mercari-jp-imgtr2.akamaized.net/images/mercari_profile.png"}/
+                .info__list__items__body
+                  .info__list__items__body__message こんてんつ
+                  %time
+                    %i.icon-time 🕛
+                    %span 5時間前
+                  %i.icon-arrow-right
+              %li
+                %a.info__list__items--go-list 一覧を見る
+
+      #info-trade
+        .info
+          .info__list
+            %h2.info__head 購入した商品
+            %ul.info__list__tabs
+              %li
+                %a.info__list__tabs__new 取引中
+              %li
+                %a.info__list__tabs__old 過去の取引
+            %ul.info__list__items--none
+              %li 情報はないよ
+            %ul.info__list__items--buy
+              %li
+                %a
+                  %figure
+                    %img.item__img{:alt => "", :height => "60", :src => "halloween_mark_pumpkin.png", :width => "60"}/
+                  .info__list__items__body
+                    .info__list__items__body__message アイテムを購入しました。ここで装備していくかい
+                    .info__list__items__body__status 取引完了
