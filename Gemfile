@@ -64,8 +64,9 @@ group :production do
   gem 'unicorn'
 end
 
-
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'haml-rails'
   gem 'erb2haml'
   gem "font-awesome-rails"
+  gem 'devise'
