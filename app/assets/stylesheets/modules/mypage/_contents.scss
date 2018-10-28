@@ -3,7 +3,7 @@
   float: left;
   width: 700px;
   .user {
-    background-image: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?52408201);
+    background-image: image-url('user-bg.jpg');
     font-size: 14px;
     height: 200px;
     position: relative;
@@ -21,7 +21,6 @@
       }
     }
     &__name {
-      font-weight: bold;
       margin: 8px 0 0 0;
     }
     &__result {
@@ -30,7 +29,6 @@
         display: inline-block;
       }
       span {
-        font-weight: bold;
         margin: 0 0 0 8px;
       }
       &__sell {
@@ -74,7 +72,6 @@
     }
     &__head {
       background-color: #fafafa;
-      font-weight: bold;
       line-height: 72px;
       padding: 0 16px;
     }
@@ -83,23 +80,20 @@
     }
     &__list {
       clear: both;
-      min-height: 80px;
-      .not-found {
-        background-color: #ffffff;
-        background-image: url(https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?52408201);
+      &__item.not-found {
+        background-image: image-url('logo-gray-icon.svg');
         background-repeat: no-repeat;
         background-position: center 40px;
         clear: both;
         color: #cccccc;
         font-size: 16px;
         font-weight: bold;
-        padding: 160px 0 60px 0;
+        padding: 160px 0 60px;
         text-align: center;
       }
       &__item.mypage__go--lists {
-        background-color: #ffffff;
         box-sizing: border-box;
-        height: 70px;
+        height: 80px;
         padding: 12px 16px;
         a {
           background-color: #eeeeee;
@@ -114,11 +108,10 @@
         background-color: #ffffff;
         position: relative;
         margin: 0 0 1px 0;
-        min-height: 80px;
         a.mypage__list--link {
-          display: block;
-          padding: 16px;
           display: flex;
+          padding: 16px;
+          min-height: 80px;
         }
         img {
           max-width: 48px;
