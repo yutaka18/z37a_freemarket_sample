@@ -1,0 +1,131 @@
+.contents
+  .user
+    .user__icon
+      = link_to users_path do
+        %figure
+          = image_tag 'member_photo_noimage_thumb.png', class: 'avatar'
+        %h2.user__name.bold d_riko
+        .user__result
+          .user__result__evolute
+            評価
+            %span.bold 0
+          .user__result__sell
+            出品数
+            %span.bold 0
+
+  .mypage--notification-todo
+    %ul.mypage__tabs
+      %li.mypage__tabs__notification.inactive
+        = link_to users_path do
+          お知らせ
+      %li.mypage__tabs__notification.active
+        = link_to users_path do
+          お知らせ
+    %ul.mypage__tabs
+      %li.mypage__tabs__todo.inactive
+        = link_to users_path do
+          やることリスト
+      %li.mypage__tabs__todo.active
+        = link_to users_path do
+          やることリスト
+
+    %ul.mypage__list.not-found.notification
+      %li.mypage__list__item.not-found
+        お知らせはありません
+
+    %ul.mypage__list.active.notification
+      %li.mypage__list__item
+        = link_to users_path, class:'mypage__list--link' do
+          %figure
+            = image_tag 'mercari_profile.png'
+          .mypage__list__item__body
+            .mypage__list__item__body--message
+              お知らせを表示します。
+            .mypage__list__item__body--time
+              %i.far.fa-clock.icon
+              %span 5 時間前
+          = fa_icon 'chevron-right', class: 'icon'
+
+      %li.mypage__list__item
+        = link_to users_path, class:'mypage__list--link' do
+          %figure
+            = image_tag 'mercari_profile.png'
+          .mypage__list__item__body
+            .mypage__list__item__body--message
+              お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。お知らせを表示します。
+            .mypage__list__item__body--time
+              %i.far.fa-clock.icon
+              %span 5 時間前
+          = fa_icon 'chevron-right', class: 'icon'
+
+      %li.mypage__list__item.mypage__go--lists
+        = link_to users_path do
+          一覧を見る
+
+    %ul.mypage__list.not-found.todo
+      %li.mypage__list__item.not-found
+        現在、やることリストはありません
+
+    %ul.mypage__list.active.todo
+      %li.mypage__list__item
+        = link_to users_path, class:'mypage__list--link' do
+          %figure
+            = image_tag 'mercari_profile.png'
+          .mypage__list__item__body
+            .mypage__list__item__body--message
+              やることリストを表示します。
+            .mypage__list__item__body--time
+              %i.far.fa-clock.icon
+              %span 5 時間前
+          = fa_icon 'chevron-right', class: 'icon'
+
+  .mypage--now-past
+    %h3.mypage__head.bold 購入した商品
+    %ul.mypage__tabs
+      %li.mypage__tabs__now.inactive
+        = link_to users_path do
+          取引中
+      %li.mypage__tabs__now.active
+        = link_to users_path do
+          取引中
+    %ul.mypage__tabs
+      %li.mypage__tabs__past.inactive
+        = link_to users_path do
+          過去の取引
+      %li.mypage__tabs__past.active
+        = link_to users_path do
+          過去の取引
+
+    %ul.mypage__list.not-found.new
+      %li.mypage__list__item.not-found
+        取引中の商品がありません
+
+    %ul.mypage__list.active.new
+      %li.mypage__list__item
+        = link_to users_path, class:'mypage__list--link' do
+          %figure
+            = image_tag 'mercari_profile.png'
+          .mypage__list__item__body
+            .mypage__list__item__body--message
+              「アイテム」を購入しました
+              %span 取引が完了しました
+            .mypage__list__item__body--status
+              取引完了
+          = fa_icon 'chevron-right', class: 'icon'
+
+    %ul.mypage__list.not-found.past
+      %li.mypage__list__item.not-found
+        過去に取引した商品がありません
+
+    %ul.mypage__list.active.past
+      %li.mypage__list__item
+        = link_to users_path, class:'mypage__list--link' do
+          %figure
+            = image_tag 'mercari_profile.png'
+          .mypage__list__item__body
+            .mypage__list__item__body--message
+              「アイテム」を購入しました
+              %span 取引が完了しました
+            .mypage__list__item__body--status
+              取引完了
+          = fa_icon 'chevron-right', class: 'icon'
