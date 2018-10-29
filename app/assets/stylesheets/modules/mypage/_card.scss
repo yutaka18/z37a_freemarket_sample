@@ -39,10 +39,10 @@
           }
           a {
             color: #fff;
-            i.far.fa-credit-card.icon {
+            i.fa-credit-card {
               color: #fff;
             }
-            i.far.fa-credit-card.icon::before {
+            i.fa-credit-card::before {
               margin-right: 10px;
             }
           }
@@ -51,8 +51,10 @@
       &-pay {
         text-align: right;
         margin: 40px 0 0;
-        a.pay-way {
+        .pay-way {
+          a {
           color: #0099e8;
+          }
         }
       }
     }

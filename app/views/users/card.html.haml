@@ -12,11 +12,12 @@
             .button-form
               .btn-red.submit-btn
                 = link_to root_path, class: ".btn-red.submit-btn" do
-                  %i.far.fa-credit-card.icon
+                  = fa_icon 'credit-card'
                   クレジットカードを追加する
           .chapter-container__inner-pay
-            %a.pay-way{:href => ""}
-              %span 支払い方法について
-              %i.fas.fa-angle-right.icon
+            .pay-way
+              = link_to root_path, class: ".pay-way" do
+                %span 支払い方法について
+                = fa_icon 'angle-right'
 
 = render 'shared/footer'
