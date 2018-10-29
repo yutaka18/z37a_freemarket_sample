@@ -27,17 +27,20 @@
           max-width: 320px;
           margin: 0 auto;
           height: 50px;
-          a.btn-red.submit-btn {
+          .btn-red.submit-btn {
+            line-height: 48px;
+            margin: 0;
+            font-size: 13px;
+            text-align: center;
+            width: 100%;
+            background-color: #ea352d;
+            border: 1px solid #ea352d;
+            font-weight: bold;
+          }
+          a {
+            color: #fff;
             i.far.fa-credit-card.icon {
-              line-height: 48px;
-              margin: 0;
-              font-size: 13px;
-              text-align: center;
-              color: #eee;
-              width: 100%;
-              background-color: #ea352d;
-              border: 1px solid #ea352d;
-              font-weight: bold;
+              color: #fff;
             }
             i.far.fa-credit-card.icon::before {
               margin-right: 10px;

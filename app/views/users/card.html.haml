@@ -10,8 +10,10 @@
           .chapter-container__inner-list クレジットカード一覧
           %section.chapter-container__inner-button
             .button-form
-              %a.btn-red.submit-btn{href: ""}
-                %i.far.fa-credit-card.icon クレジットカードを追加する
+              .btn-red.submit-btn
+                = link_to root_path, class: ".btn-red.submit-btn" do
+                  %i.far.fa-credit-card.icon
+                  クレジットカードを追加する
           .chapter-container__inner-pay
             %a.pay-way{:href => ""}
               %span 支払い方法について
