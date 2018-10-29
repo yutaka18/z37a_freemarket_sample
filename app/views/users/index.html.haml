@@ -5,7 +5,7 @@
     = render 'shared/sidebar'
 
     .contents
-      .user
+      %section.user
         .user__icon
           = link_to users_path do
             %figure
@@ -19,7 +19,7 @@
                 出品数
                 %span.bold 0
 
-      .mypage--notification-todo
+      %section.mypage--notification-todo
         %ul.mypage__tabs
           %li.mypage__tabs__notification.inactive
             = link_to users_path do
@@ -85,7 +85,7 @@
                   %span 5 時間前
               = fa_icon 'chevron-right', class: 'icon'
 
-      .mypage--now-past
+      %section.mypage--now-past
         %h3.mypage__head.bold 購入した商品
         %ul.mypage__tabs
           %li.mypage__tabs__now.inactive

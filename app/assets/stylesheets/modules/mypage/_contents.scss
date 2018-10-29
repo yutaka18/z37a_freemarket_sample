@@ -1,7 +1,4 @@
 .contents {
-  display: block;
-  float: left;
-  width: 700px;
   .user {
     background-image: image-url('user-bg.jpg');
     font-size: 14px;
@@ -38,6 +35,9 @@
   }
 
   .mypage {
+    &--now-past {
+      margin-top: 40px;
+    }
     &__tabs__notification.inactive {
       display: none;
     }
@@ -50,7 +50,6 @@
     &__tabs__past.inactive {
       display: none;
     }
-
     &__list.not-found.notification {
       display: none;
     }

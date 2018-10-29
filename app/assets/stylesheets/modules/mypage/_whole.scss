@@ -5,6 +5,12 @@
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
+.contents {
+  display: block;
+  float: left;
+  width: 700px;
+}
+
 a {
   text-decoration: none;
   color: #333333;
@@ -30,6 +36,30 @@ figure {
   margin: 0;
 }
 
+.form-requre {
+  background-color: #ff0000;
+  border-radius: 2px;
+  color: #ffffff;
+  font-size: 12px;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  vertical-align: top;
+}
+
+.form-arbitrary {
+  background-color: #ffffff;
+  border-radius: 2px;
+  color: #ffffff;
+  font-size: 12px;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  vertical-align: top;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .clearfix:after {
   content: "";
   clear: both;
@@ -37,7 +67,6 @@ figure {
 }
 
 .contents {
-
   .mypage {
     width: 700px;
     padding: 0;
@@ -63,9 +92,6 @@ figure {
       background-color: #fafafa;
       line-height: 72px;
       padding: 0 16px;
-    }
-    &--now-past {
-      padding-top: 40px;
     }
     &__list {
       clear: both;
@@ -138,3 +164,4 @@ figure {
     }
   }
 }
+
