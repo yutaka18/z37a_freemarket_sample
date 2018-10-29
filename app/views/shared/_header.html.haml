@@ -1,0 +1,29 @@
+.header
+  .header-contents
+    .header-contents__top.clearfix
+      %h1.header-contents__top-left
+        %a{:href => "https://www.mercari.com/jp/"}
+          %img{:alt => "mercari", :height => "36", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2900942513", :width => "134"}/
+      %form.header-contents__top-right{:action => "https://www.mercari.com/jp/search/"}
+        %input.input-default{:name => "keyword", :placeholder => "キーワードから探す", :type => "search", :value => ""}/
+        =fa_icon 'search', class: 'icon-search'
+    .header-contents__bottom.clearfix
+      .header-contents__bottom-left
+        %ul.genre-ul
+          %li.genre-li
+            %a.category-list{href: ""} カテゴリーから探す
+          %li.genre-li
+            %a.brand-list{href: ""} ブランドから探す
+      .header-contents__bottom-right
+        %ul.user
+          %li.user-li
+            %a.user-link{href: ""}
+              .user-box
+                %img.user-image{src: "https://pbs.twimg.com/profile_images/581025665727655936/9CnwZZ6j.jpg", :alt => "", width: '32'}/
+              .user-box マイページ
+          %li.user-li
+            %i.far.fa-bell.icon
+            %span お知らせ
+          %li.user-li
+            =fa_icon 'check'
+            %span やることリスト
