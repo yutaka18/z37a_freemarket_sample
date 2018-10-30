@@ -3,6 +3,7 @@
   color: #333333;
   display: block;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .contents {
@@ -36,6 +37,12 @@ figure {
   margin: 0;
 }
 
+.form-info-text {
+  margin: 8px 0 0;
+  color: #888888;
+  line-height: 1.5;
+}
+
 .form-requre {
   background-color: #ff0000;
   border-radius: 2px;
@@ -58,6 +65,10 @@ figure {
 
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .clearfix:after {

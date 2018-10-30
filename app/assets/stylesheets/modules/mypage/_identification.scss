@@ -1,0 +1,68 @@
+.form-identification {
+  padding: 64px;
+  p {
+    line-height: 1.5;
+  }
+}
+.form-group:first-child {
+ margin: 0;
+}
+.form-group {
+  margin: 40px 0 0;
+  select {
+    width: 100%;
+  }
+  .select-wrap {
+    margin: 8px 0 0;
+  }
+  a {
+    color: #0099e8;
+    font-size: 14px;
+  }
+  a:hover {
+    text-decoration: underline;
+    opacity: .7;
+  }
+}
+.address-info {
+  margin: 8px 0 0 4px;
+  font-size: 16px;
+}
+.birthday-select-wrap {
+  display: inline-block;
+  .select-wrap{
+    width: 140px;
+    display: inline-block;
+  }
+  span {
+    margin: 0 8px;
+  }
+}
+select {
+  outline: 0;
+  -webkit-appearance: none;
+}
+.select-wrap {
+  position: relative;
+  .fa-chevron-down {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    z-index: 2;
+    color: #888888;
+    transform: translate(0, -50%);
+    text-transform: none;
+  }
+}
+.select-default {
+  position: relative;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}

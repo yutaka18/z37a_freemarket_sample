@@ -1,0 +1,56 @@
+= render 'shared/header'
+
+.wrapper
+  %main.mypage.clearfix
+    = render 'shared/sidebar'
+    .contents
+      %section.chapter-container
+        %h2.chapter-container__title 本人情報の登録
+        %p.text-center お客さまのあんしん・あんぜんな取引のため、本人情報のご登録をお願いしております。
+
+        %form.form-identification
+          .form-group
+            %label.bold 住所
+            %span.form-requre 必須
+            .address-info
+              %address
+                %p 〒
+                %p 住所
+                %p 名前
+              = link_to '編集'
+
+          .form-group
+            %label.bold 生年月日
+            %span.form-requre 必須
+            %br
+            .birthday-select-wrap
+              .select-wrap
+                %select#year.select-default{name: 'year'}
+                  %option{value: ''} --
+                = fa_icon 'chevron-down', class: 'icon'
+              %span 年
+
+            .birthday-select-wrap
+              .select-wrap
+                %select#month.select-default{name: 'month'}
+                  %option{value: ''} --
+                = fa_icon 'chevron-down', class: 'icon'
+              %span 月
+
+            .birthday-select-wrap
+              .select-wrap
+                %select#day.select-default{name: 'day'}
+                  %option{value: ''} --
+                = fa_icon 'chevron-down', class: 'icon'
+              %span 日
+
+            %p.form-info-text ※出品されたことがある、本人情報未登録のお客さまもご対象となります。
+
+          %button.btn-red 登録する
+          .form-group.text-right
+            %p
+              %a{href: ""}
+                本人情報の登録について
+                = fa_icon 'chevron-right', class: 'icon'
+
+= render 'shared/footer'
