@@ -1,0 +1,55 @@
+= render 'shared/user_header'
+
+.buy-main
+  %section.buy-section
+    .buy-container
+      %h2.buy-container-title 購入を確定しますか？
+      %section.buy-item
+        .buy-item__inner
+          %h3.buy-item__inner-image
+            %img.buy-item-image{alt: "", "data-src": "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m70068440240_1.jpg?1539045823", src: "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m70068440240_1.jpg?1539045823"}/
+          %p.buy-item__inner-name 正規品！COACH【コーチ】★★大きめ ミニシグネチャー ショルダーバッグ
+          %form.buy-form{action: "", method: "post", novalidate: "novalidate"}
+            %p.buy-price
+              ¥ 4,180
+              %span.item-shipping-fee 送料込み
+            %ul.buy-accordion
+              %li.buy-accordion-parent
+                .buy-accordion-toggle
+                  ポイントはありません
+            %ul.buy-price
+              .li.buy-price-row
+                .buy-price-cell-left 支払い金額
+                .buy-price-cell-right
+                  %span.data-buy-pay ¥ 4,180
+            %p.error-text 配送先と支払い方法の入力を完了してください。
+            %button.btn-default.btn-red.bold{disabled: "", type: "submit"} 購入する
+            / %button.btn-default.btn-gray.bold{disabled: "", type: "submit"} 購入する
+
+      %section.buy-user
+        .buy-item__inner
+          %h3.item-address 配送先
+          %address.buy-user-info-text
+            〒123-4567
+            %br/
+            東京都 品川区
+            南町1-10-18
+            HOUSE APA 101
+            %br/
+            山崎 陽祐
+          %p.address-fix
+            = link_to "https://www.mercari.com/jp/transaction/address/m70068440240/", class: "buy-user-info-fix" do
+              %span.fix-text 変更する
+              = fa_icon 'angle-right'
+
+      %section.buy-user
+        .buy-item__inner
+          %h3.item-address 支払い方法
+          %address.buy-user-info-text
+            ーーー
+          %p.address-fix
+            = link_to "https://www.mercari.com/jp/transaction/card/m70068440240/", class: "buy-user-info-fix" do
+              %span.fix-text 変更する
+              = fa_icon 'angle-right'
+
+= render 'shared/user_footer'
