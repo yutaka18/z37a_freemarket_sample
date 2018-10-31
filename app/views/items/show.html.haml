@@ -1,0 +1,447 @@
+%body
+  .defalt-container
+    = render "shared/header"
+    %section.item-box-container.u-single-container
+      %h1.item-name ポーチ
+      .item-main-content.clearfix
+        .item-photo
+          .owl-carousel.owl-loaded.owl-drag
+            .owl-stage-outer
+              .owl-stage{:style => "left: 0px; width: 300px;"}
+                .owl-item.active{:style => "width: 300px;"}
+                  .owl-item-inner.is-higher-width{"data-thumbnail-class-name" => " is-higher-width"}
+                    %img.owl-lazy{:alt => "ポーチ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", :src => "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", :style => "opacity: 1;"}/
+            .owl-nav.disabled
+              .owl-prev prev
+              .owl-next next
+            .owl-dots.disabled{:style => "display: none;"}
+              .owl-dot.active
+                %span
+        %table.item-detail-table
+          %tbody
+            %tr
+              %th 出品者
+              %td
+                %a{:href => "https://www.mercari.com/jp/u/966879579/"} Yosuke  Yamazaki
+                %div
+                  .item-user-ratings
+                    %i.fas.fa-grin-beam
+                    %span 2
+                  .item-user-ratings
+                    %i.fas.fa-meh
+                    %span 0
+                  .item-user-ratings
+                    %i.fas.fa-frown
+                    %span 0
+            %tr
+              %th カテゴリー
+              %td
+                %a{:href => "https://www.mercari.com/jp/category/4/"}
+                  %div インテリア・住まい・小物
+                %a{:href => "https://www.mercari.com/jp/category/70/"}
+                  .item-detail-table-sub-sub-category
+                    %i.fas.fa-angle-right>
+                    その他
+            %tr
+              %th ブランド
+              %td
+            %tr
+              %th 商品の状態
+              %td 全体的に状態が悪い
+            %tr
+              %th 配送料の負担
+              %td 着払い(購入者負担)
+            %tr
+              %th 配送の方法
+              %td 未定
+            %tr
+              %th 配送元地域
+              %td
+                %a{:href => "https://www.mercari.com/jp/area/13/"}
+                  東京都
+            %tr
+              %th 発送日の目安
+              %td 4~7日で発送
+      .item-price-box.text-center
+        %span.item-price.bold ¥ 100,000
+        %span.item-tax (税込)
+        %span.item-shipping-fee 着払い
+      %a.item-buy-btn{"data-client" => "hidden", :href => "https://www.mercari.com/jp/transaction/buy/m81006698765/"}
+        購入画面に進む
+      .item-description
+        %p.item-description-inner 仮です。
+      .item-button-container.clearfix
+        .item-button-left
+          %button.item-button.item-button-like{"data-ga" => "element", "data-ga-category" => "LIKE", "data-ga-label" => "like!", "data-id" => "m81006698765", "data-toggle" => "like", :name => "like!", :type => "button"}
+            %i.far.fa-heart
+            %span いいね!
+            %span.fade-in-down{"data-num" => "like"} 0
+          %a.item-button.item-button-report.clearfix{"data-modal" => "report-item", "data-open" => "modal", :href => ""}
+            %i.far.fa-flag
+            %span 不適切な商品の報告
+          %input{:name => "like_add_url", :type => "hidden", :value => "https://www.mercari.com/jp/like/add/m81006698765/"}/
+          %input{:name => "like_del_url", :type => "hidden", :value => "https://www.mercari.com/jp/like/delete/m81006698765/"}/
+          %input{:name => "__csrf_value", :type => "hidden", :value => "c43823ecab510029768ba6e18316a6c5ef7aff7a07bfceec51ba52a83163a496aadd9d165f415bb5be3ec4b1ec459829f5c3aea6ca6eee3b84cd16f89be1e020e"}/
+        .item-button-right
+          %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"}
+            %i.fas.fa-lock
+            %span あんしん・あんぜんへの取り組み
+    .item-detail-message
+      .message-container
+        .message-content
+          %ul.message-items
+            %li.clearfix
+              %a.message-user{:href => "https://www.mercari.com/jp/u/774541578/"}
+                %figure
+                  %div
+                    %img{:alt => "", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png"}/
+                  %figcaption.bold
+                    d_riko
+              .message-body
+                .message-body-text
+                  値下げお願いできないでしょうか
+                .message-icons.clearfix
+                  %time.message-icon-left
+                    %i.far.fa-clock
+                    %span 5 日前
+                  .message-icon-right
+                    %form{:action => "https://www.mercari.com/jp/comment/report/m81006698765/1813173470/", :method => "POST"}
+                      %button{:type => "submit"}
+                        %i.far.fa-flag
+                      %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+                %i.fas.fa-caret-down
+            %li.clearfix
+              %a.message-user{:href => "https://www.mercari.com/jp/u/966879579/"}
+                %figure
+                  %div
+                    %img{:alt => "", :src => "//static-mercari-jp-imgtr2.akamaized.net/thumb/members/966879579.jpg?1529060879"}/
+                  %figcaption.bold
+                    Yosuke  Yamazaki
+                .message-is-seller
+                  出品者
+              .message-body
+                .message-body-text
+                  いくらがいいですか？
+                .message-icons.clearfix
+                  %time.message-icon-left
+                    %i.far.fa-clock
+                    %span 5 日前
+                  .message-icon-right
+                    %form{:action => "https://www.mercari.com/jp/comment/report/m81006698765/1813174209/", :method => "POST"}
+                      %button{:type => "submit"}
+                        %i.far.fa-flag
+                      %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+                %i.fas.fa-caret-down
+            %li.clearfix.message-self
+              %a.message-user{:href => "https://www.mercari.com/jp/u/624656682/"}
+                %figure
+                  %div
+                    %img{:alt => "", :src => "//static-mercari-jp-imgtr2.akamaized.net/images/member_photo_noimage_thumb.png"}/
+                  %figcaption.bold
+                    yutaka
+              .message-body
+                .message-body-text
+                  aaaaaaaaaaa
+                .message-icons.clearfix
+                  %time.message-icon-left
+                    %i.icon-time
+                    %span 21 時間前
+                  .message-icon-right
+                %i.fas.fa-caret-down
+        .message-content
+          %form.message-form{:action => "https://www.mercari.com/jp/comment/add/", :method => "POST"}
+            %input{:name => "__csrf_value", :type => "hidden", :value => "c43823ecab510029768ba6e18316a6c5ef7aff7a07bfceec51ba52a83163a496aadd9d165f415bb5be3ec4b1ec459829f5c3aea6ca6eee3b84cd16f89be1e020e"}/
+            %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            %input{:name => "item_id", :type => "hidden", :value => "m81006698765"}/
+            %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
+            %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
+            %button.message-submit.btn-default.btn-gray{:type => "submit"}
+              %span コメントする
+    %ul.nav-item-link-prev-next.clearfix
+      %li.nav-item-link-prev
+        %a{:href => "https://item.mercari.com/jp/m95819592791/"}
+          %i.fas.fa-angle-left
+          GU プリントスポーツレギンス Ｌサイズ
+      %li.nav-item-link-next
+        %a{:href => "https://item.mercari.com/jp/m22408372711/"}
+          進撃の巨人
+          %i.fas.fa-angle-right
+    .item-social-media-box
+      %ul.social-media-box
+        %li
+          %a.share-btn{"data-window-name" => "facebook_window", :href => "http://www.facebook.com/share.php?u=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm81006698765%2F", :target => "_blank"}
+            %i.fab.fa-facebook
+        %li
+          %a.share-btn{"data-window-name" => "twitter_window", :href => "http://twitter.com/share?count=horizontal&original_referer=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm81006698765%2F&text=%E3%83%9D%E3%83%BC%E3%83%81%20%28%C2%A5%20100%2C000%29%20https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm81006698765%2F%20%E3%83%95%E3%83%AA%E3%83%9E%E3%82%A2%E3%83%97%E3%83%AA%E3%80%8C%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E3%80%8D%E3%81%A7%E8%B2%A9%E5%A3%B2%E4%B8%AD%E2%99%AA%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%20%40mercari_jp%E3%81%95%E3%82%93%E3%81%8B%E3%82%89", :target => "_blank"}
+            %i.fab.fa-twitter
+        %li
+          %a.share-btn{"data-window-name" => "pinterest_window", :href => "http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm81006698765%2F&media=https%3A%2F%2Fstatic-mercari-jp-imgtr2.akamaized.net%2Fitem%2Fdetail%2Forig%2Fphotos%2Fm81006698765_1.jpg%3F1540782839&description=%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E5%95%86%E5%93%81%3A%20%E3%83%9D%E3%83%BC%E3%83%81%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA", :target => "_blank"}
+            %i.fab.fa-pinterest
+    .items-in-user-profile
+      %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
+        %h2.items-box-head
+          %a{:href => "https://www.mercari.com/jp/u/323773018/"} さとうさんのその他の出品
+        .items-box-content.clearfix
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m34807916265/"}
+              %figure.items-box-photo
+                %img.is-higher-height.lazyloaded{:alt => "アメリカンラグシー 新品タグ付き パーカーワンピース", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448"}/
+              .items-box-body
+                %h3.items-box-name.font-2 アメリカンラグシー 新品タグ付き パーカーワンピース
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 4,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m34807916265/"}
+              %figure.items-box-photo
+                %img.is-higher-height.lazyloaded{:alt => "アメリカンラグシー 新品タグ付き パーカーワンピース", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448"}/
+              .items-box-body
+                %h3.items-box-name.font-2 アメリカンラグシー 新品タグ付き パーカーワンピース
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 4,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m34807916265/"}
+              %figure.items-box-photo
+                %img.is-higher-height.lazyloaded{:alt => "アメリカンラグシー 新品タグ付き パーカーワンピース", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448"}/
+              .items-box-body
+                %h3.items-box-name.font-2 アメリカンラグシー 新品タグ付き パーカーワンピース
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 4,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m34807916265/"}
+              %figure.items-box-photo
+                %img.is-higher-height.lazyloaded{:alt => "アメリカンラグシー 新品タグ付き パーカーワンピース", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448"}/
+              .items-box-body
+                %h3.items-box-name.font-2 アメリカンラグシー 新品タグ付き パーカーワンピース
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 4,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m34807916265/"}
+              %figure.items-box-photo
+                %img.is-higher-height.lazyloaded{:alt => "アメリカンラグシー 新品タグ付き パーカーワンピース", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448"}/
+              .items-box-body
+                %h3.items-box-name.font-2 アメリカンラグシー 新品タグ付き パーカーワンピース
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 4,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m34807916265/"}
+              %figure.items-box-photo
+                %img.is-higher-height.lazyloaded{:alt => "アメリカンラグシー 新品タグ付き パーカーワンピース", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m34807916265_1.jpg?1538035448"}/
+              .items-box-body
+                %h3.items-box-name.font-2 アメリカンラグシー 新品タグ付き パーカーワンピース
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 4,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+      %section.items-box-container.clearfix.items-box-overflow
+        %h2.items-box-head
+          %a{:href => "https://www.mercari.com/jp/category/70/"}
+            その他 （インテリア・住まい・小物） その他の商品
+        .items-box-content.clearfix
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
+              %figure.items-box-photo
+                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
+              .items-box-body
+                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 2,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
+              %figure.items-box-photo
+                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
+              .items-box-body
+                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 2,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
+              %figure.items-box-photo
+                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
+              .items-box-body
+                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 2,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
+              %figure.items-box-photo
+                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
+              .items-box-body
+                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 2,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
+              %figure.items-box-photo
+                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
+              .items-box-body
+                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 2,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+          %section.items-box
+            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
+              %figure.items-box-photo
+                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
+              .items-box-body
+                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
+                .items-box-num.clearfix
+                  .items-box-price.font-5
+                    ¥ 2,500
+                  .items-box-likes.font-2
+                    %i.far.fa-heart
+                    %span 2
+                  %p.item-box-tax (税込)
+    %aside.app-banner
+      .app-banner__contain
+        .app-banner__contain-inner
+          %h2.banner-title スマホでかんたんフリマアプリ
+          %p.banner-text 今すぐ無料ダウンロード！
+          .app-banner__contain-inner__logo
+            %img.logo-left{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?2960600120", :width => "68"}/
+            %ul.clearfix
+              %li.ios-logo
+                %a{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
+                  %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2960600120", :width => "133"}/
+              %li.android-logo
+                %a{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
+                  %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2960600120", :width => "133"}/
+        %img.logo-right{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?2960600120"}/
+    %footer.footer
+      .footer-contents
+        %ul.content
+          %li.footer-cell
+            %h2.footer-head メルカリについて
+            %ul.footer-bottoms
+              %li
+                %a{:href => "https://about.mercari.com/"} 会社概要（運営会社）
+              %li
+                %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
+              %li
+                %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
+              %li
+                %a{:href => "https://www.mercari.com/jp/tos_paid_point/"} メルカリ利用規約・有償ポイントに関する特約
+              %li
+                %a{:href => "https://www.mercari.com/jp/tos_smartphone_support/"} あんしんスマホサポート制度に関する利用特約
+              %li
+                %a{:href => "https://www.mercari.com/jp/compliance/"} コンプライアンスポリシー
+              %li
+                %a{:href => "https://www.mercari.com/jp/data_security/"} 個人データの安全管理に係る基本方針
+              %li
+                %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
+              %li
+                %a{:href => "https://www.mercari.com/jp/shikin_kessai/"} 資金決済法に基づく表示
+              %li
+                %a{:href => "https://about.mercari.com/csr/safety/"} 法令順守と犯罪抑止のために
+              %li
+                %a{:href => "https://www.mercari.com/jp/jobs/"} 採用情報
+          %li.footer-cell
+            %h2.footer-head メルカリを見る
+            %ul.footer-bottoms
+              %li
+                %a{:href => "https://www.mercari.com/jp/category/"} カテゴリー一覧
+              %li
+                %a{:href => "https://www.mercari.com/jp/brand/"} ブランド一覧
+              %li
+                %a{:href => "https://www.mercari.com/jp/area/"} 出品地域一覧
+              %li
+                %a{:href => "https://jp-news.mercari.com/", :target => "_blank"} 公式ブログ
+              %li
+                %a{:href => "https://twitter.com/mercari_jp", :target => "_blank"} 公式Twitter
+              %li
+                %a{:href => "https://www.facebook.com/mercarijp", :target => "_blank"} 公式Facebook
+          %li.footer-cell
+            %h2.footer-head ヘルプ＆ガイド
+            %ul.footer-bottoms
+              %li
+                %a{:href => "https://www.mercari.com/jp/help_center/"} メルカリガイド
+              %li
+                %a{:href => "https://www.mercari.com/jp/logo-guidelines/"} メルカリロゴ利用ガイドライン
+              %li
+                %a{:href => "https://about.mercari.com/press/news/"} お知らせ
+              %li
+                %a{:href => "https://www.mercari.com/jp/rakuraku-mercari/"} らくらくメルカリ便とは
+              %li
+                %a{:href => "https://www.mercari.com/jp/yuyu-mercari/"} ゆうゆうメルカリ便とは
+              %li
+                %a{:href => "https://www.mercari.com/jp/rakuraku-ogata/"} 大型らくらくメルカリ便とは
+              %li
+                %a{:href => "https://www.mercari.com/jp/guide/car/"} 車体取引ガイド
+              %li
+                %a{:href => "https://www.mercari.com/jp/refund-returns/"} 返品・返金ポリシー
+              %li
+                %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"} メルカリあんしん・あんぜん宣言！
+              %li
+                %a{:href => "https://www.mercari.com/jp/authenticity/"} 偽ブランド品撲滅への取り組み
+              %li
+                %a{:href => "https://www.mercari.com/jp/box/"} メルカリボックス
+          %li.footer-cell
+            %h2.footer-head 国
+            %ul.footer-lang
+              %li
+                %a{:href => "https://www.mercari.com/"}
+                  %img{alt: "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?2960600120", width: "22"}>/
+                  United States
+              %li
+                %a{:href => "https://www.mercari.com/uk/"}
+                  %img{:alt => "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?2960600120", width: "22"}>/
+                  United Kingdom
+              %li
+                %a.active{:href => "https://www.mercari.com/jp/"}
+                  %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?2960600120", width: "22"}>/
+                  日本
+      %a.footer-logo{:href => "https://www.mercari.com/jp/"}
+        %img{alt: "mercari", height: "33", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2960600120", width: "115"}/
+      %p.footer-copyright
+        %small © 2018 Mercari
