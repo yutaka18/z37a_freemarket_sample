@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  root    'items#index'
-  resources :items do
+  root  'items#index'
+  resources  :items do
     get 'buy'
   end
 
-  resource :user
+  resource   :user
   scope module: :users do
-    resource :card,  only: :show
+    resource :card, only: :show
     resource :profile, only: :edit
     resource :identification, only: :edit
   end
