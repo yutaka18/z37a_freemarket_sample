@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root  'items#index'
   resources  :items do
-    get 'buy'
+    get 'buy' => 'items#buy'
   end
 
   resource   :user
