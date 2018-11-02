@@ -1,9 +1,6 @@
 class ItemsController < ApplicationController
 
-  def index
-  end
-
-  def show
+  def buy
   end
 
 end
