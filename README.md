@@ -6,13 +6,22 @@
 |nickname|string|null: false, validates: length: { maximun: 20 }|
 |mail_address|string|null: false, unique: true|
 |password|string|null: false|
+|phone_number|string|unique: true|
 |profile|text||
+
+### association
+- has_many : items
+- has_many : likes
+- has_one : destination
+
+## destinationテーブル
+|column|type|options|
+|------|----|-------|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
 |last_name_kana|string|null: false|
 |birthday|date|null: false|
-|phone_number|string|unique: true|
 |post_number|string|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -20,8 +29,7 @@
 |building|string||
 
 ### association
-- has_many : items
-- has_many : likes
+- belongs_to : user
 
 ## likesテーブル
 |column|type|options|
