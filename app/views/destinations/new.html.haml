@@ -19,10 +19,10 @@
             完了
             .progress-status
     %main.single-main
-      %section.user-single-container
-        %h2.user-single-head 住所入力
-        .user-single-contents
-          .user-single-content
+      %section.cl-user-single
+        %h2.cl-user-single__head 住所入力
+        .cl-user-single__contents
+          .cl-user-single__contents__content
             - if @destination.errors.any?
               #error_explanation
                 .alert.alert-danger

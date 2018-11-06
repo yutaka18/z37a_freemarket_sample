@@ -335,22 +335,22 @@ body {
 }
 
 
-.user-single-container {
+.cl-user-single {
   max-width: none;
   width: 700px;
   margin: 0 auto;
   background-color: #fff;
-  .user-single-head {
+  &__head {
     padding: 32px 16px;
     font-size: 22px;
     line-height: 1.5;
     text-align: center;
     font-weight: bold;
   }
-  .user-single-contents {
+  &__contents {
     border-top: 1px solid #f5f5f5;
     padding: 22px 64px 64px;
-    .user-single-content {
+    &__content {
       max-width: 320px;
       margin: 0 auto;
       .form-group {
