@@ -83,3 +83,5 @@ gem 'mini_magick'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'payjp'
 gem 'jquery-turbolinks'
+gem 'enum_help'
+gem 'rails-i18n'
