@@ -8,7 +8,7 @@
       .login-panel
         .login-no-account
           %p アカウントをお持ちでない方はこちら
-          = link_to new_user_registration_path , class: "l-login-no-account" do
+          = link_to users_path , class: "l-login-no-account" do
             新規会員登録
         .login-form-inner
           %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
@@ -25,12 +25,7 @@
               .form-group
                 = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
               .form-group
-                .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-                  %div{:style => "width: 304px; height: 78px;"}
-                    %div
-                      %iframe{:frameborder => "0", :height => "78", :name => "a-u9e6w1otjfn0", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1540189908068&size=normal&cb=oae1d4risqt6", :width => "304"}
-                    %textarea#g-recaptcha-response.g-recaptcha-response{:name => "g-recaptcha-response", :style => "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
-                      :preserve
+                .g-recaptcha{"data-sitekey" => "6LfxvHgUAAAAABvjT3CdoXb371mPnvTXFdVie8a4"}
               .actions
                 = f.submit "ログイン"
               .password-forgot

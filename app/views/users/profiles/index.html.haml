@@ -1,0 +1,13 @@
+= render 'shared/header'
+
+.wrapper
+  %main.mypage.clearfix
+    = render 'shared/sidebar'
+    .logout-container
+      %form.logout-form{action: ""}
+        .logout-btn
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: '.logout-btn__red '
+          / %button.logout-btn__red ログアウト
+          / %input{type: "hidden"}
+
+= render 'shared/footer'
