@@ -16,6 +16,12 @@
               .sell-image__box-upload
                 = f.fields_for :images do |i|
                   = i.file_field :image_url
+                = f.fields_for :images do |i|
+                  = i.file_field :image_url
+                = f.fields_for :images do |i|
+                  = i.file_field :image_url
+                = f.fields_for :images do |i|
+                  = i.file_field :image_url
                 %pre.visible-pc
                   ドラッグアンドドロップ
                   またはクリックしてファイルをアップロード
@@ -60,7 +66,7 @@
                   ブランド
                   %span.form-arbitrary 任意
                 .select-box
-                  = f.text_field :brand_id, placeholder: '例）シャネル', class: 'input-default'
+                  = f.text_field :brand, placeholder: '例）シャネル', class: 'input-default'
               .form-group
                 %label
                   商品の状態

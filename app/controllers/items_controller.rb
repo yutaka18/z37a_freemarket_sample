@@ -7,7 +7,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    binding.pry
     @item.save
+    redirect_to action: :new
   end
 
   def buy
@@ -24,15 +26,13 @@ class ItemsController < ApplicationController
       :category_large_id,
       :category_medium_id,
       :category_small_id,
-      :brand_id,
+      :brand,
       :burden,
       :shipping_method,
       :from_prefecture,
       :shipping_days,
-      :buyer_id,
-      :user_id,
       images_attributes: [:id, :image_url]
-      ).merge(user_id: 1,buyer_id: 0)
+      ).merge(user_id: 1)
   end
 
 end
