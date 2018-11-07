@@ -6,7 +6,6 @@
     .logout-container
       %form.logout-form{action: ""}
         .logout-btn
-          %button.logout-btn__red ログアウト
-          %input{type: "hidden"}
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: '.logout-btn'
 
 = render 'shared/footer'
