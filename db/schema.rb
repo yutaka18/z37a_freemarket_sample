@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181105112543) do
+ActiveRecord::Schema.define(version: 20181107062418) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -55,20 +55,19 @@ ActiveRecord::Schema.define(version: 20181105112543) do
     t.text "content", null: false
     t.integer "price", null: false
     t.integer "condition", null: false
-    t.string "size", null: false
+    t.string "size", default: "", null: false
     t.integer "category_large_id", null: false
-    t.integer "category_medium_id", null: false
-    t.integer "category_small_id", null: false
-    t.bigint "brand_id", null: false
+    t.integer "category_medium_id"
+    t.integer "category_small_id"
     t.integer "burden", null: false
     t.integer "shipping_method", null: false
     t.integer "from_prefecture", null: false
     t.integer "shipping_days", null: false
-    t.integer "buyer_id", null: false
+    t.integer "buyer_id", default: 0, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.string "brand_id"
     t.index ["burden"], name: "index_items_on_burden"
     t.index ["condition"], name: "index_items_on_condition"
     t.index ["name"], name: "index_items_on_name"
@@ -101,7 +100,6 @@ ActiveRecord::Schema.define(version: 20181105112543) do
   end
 
   add_foreign_key "images", "items"
-  add_foreign_key "items", "brands"
   add_foreign_key "items", "users"
   add_foreign_key "trading_statuses", "items"
 end
