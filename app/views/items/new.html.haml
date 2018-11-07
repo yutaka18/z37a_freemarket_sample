@@ -14,14 +14,9 @@
             .sell-image__box
               .sell-image__box-items
               .sell-image__box-upload
-                = f.fields_for :images do |i|
-                  = i.file_field :image_url
-                = f.fields_for :images do |i|
-                  = i.file_field :image_url
-                = f.fields_for :images do |i|
-                  = i.file_field :image_url
-                = f.fields_for :images do |i|
-                  = i.file_field :image_url
+                - 4.times do |i|
+                  = f.fields_for :images do |i|
+                    = i.file_field :image_url
                 %pre.visible-pc
                   ドラッグアンドドロップ
                   またはクリックしてファイルをアップロード
