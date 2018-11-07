@@ -1,34 +1,54 @@
 %body
   .single-container
-    %header.single-header
+    %header.user-header
       %h1
         = link_to root_path, class: "single-header" do
           = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2960600120"
+      %nav.progress-bar.signup-bar
+        %ol.clearfix
+          %li.active
+            会員情報
+            .progress-status
+          %li
+            住所入力
+            .progress-status
+          %li
+            支払い方法
+            .progress-status
+          %li
+            完了
+            .progress-status
     %main.single-main
-      %section.l-single-container
-        .login-no-account
-          %h2 新規会員登録
-        .login-form-inner
-          .l-login-form-inner
-            %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
-              %i.fab.fa-facebook
-              Facebookで登録
-            %button#google-login.btn-default.btn-sns.btn-sns-google
-              %i.fab.fa-google-plus-square
-              Googleで登録
-            = link_to new_user_registration_path , class: "btn-default btn-sns btn-mail" do
-              %i.far.fa-envelope
-              メールアドレスで登録
-    %footer.single-footer
-      %nav
-        %ul.clearfix
-          %li
-            %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
-          %li
-            %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
-          %li
-            %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-      = link_to root_path, class: "single-footer-logo" do
-        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2960600120"
-      %p
-        %small © 2018 Mercari
+      %section.cl-user-single
+        %h2.cl-user-single__head 会員情報入力
+        .cl-user-single__contents
+          .cl-user-single__contents__content
+            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              = devise_error_messages!
+              .form-group
+                = f.label :ニックネーム
+                %span.form-require 必須
+                = f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder: "ニックネーム"
+              .form-group
+                = f.label :メールアドレス
+                %span.form-require 必須
+                = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス(PC・携帯どちらでも可)"
+              .form-group
+                = f.label :"電話番号(ハイフンなし)"
+                %span.form-require 必須
+                = f.telephone_field :phone_number, autofocus: true, autocomplete: "email", maxlength: "11",placeholder: "携帯電話の番号を入力"
+              %input{:name => "login_type", :type => "hidden", :value => ""}/
+              .form-group
+                = f.label :パスワード
+                %span.form-require 必須
+                = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード(６文字以上)"
+              .form-group
+                = f.label :"パスワード(確認)"
+                %span.form-require 必須
+                = f.password_field :password_confirmation, autocomplete: "current-password", placeholder: "パスワード(６文字以上)"
+              %input{:name => "after_save_callback", :type => "hidden", :value => ""}/
+              .form-group
+                .g-recaptcha{"data-sitekey" =>  ENV["RECAPTCHA_SITE_KEY"]}
+              .actions
+                = f.submit "次へ進む"
+    = render "shared/user_footer"
