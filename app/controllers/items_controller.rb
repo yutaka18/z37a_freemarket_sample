@@ -7,7 +7,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    binding.pry
     @item.save
     redirect_to action: :new
   end
@@ -16,6 +15,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.require(:item).permit(
       :name,
