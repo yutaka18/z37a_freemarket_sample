@@ -47,10 +47,16 @@
             color: #333;
             margin-right: 10px;
           }
+          .category-list:hover {
+            color: #0099e8;
+          }
           .brand-list {
             display: inline-block;
             text-decoration: none;
             color: #333;
+          }
+          .brand-list:hover {
+            color: #0099e8;
           }
         }
       }
@@ -63,16 +69,52 @@
         li.user-li {
           float: left;
           margin-left: 10px;
-          a.user-link {
-            color: #333;
-            text-decoration: none;
-            .user-box {
-              display: inline-block;
-              img.user-image {
-                border-radius: 50%;
-                vertical-align: bottom;
-              }
+          cursor: pointer;
+          a.user-mypage {
+            padding-bottom: 15px;
+            .user-image {
+              border-radius: 50%;
+              vertical-align: middle;
+              margin-right: 5px;
             }
+          }
+        }
+        li.user-li:hover {
+          color: #0099e8;
+          a.user-mypage:hover {
+            color: #0099e8;
+          }
+        }
+        li.login {
+          background-color: #ea352d;
+          border-radius: 4px;
+          display: inline-block;
+          line-height: 28px;
+          margin-right: 10px;
+          a.login-text {
+            color: #fff;
+            display: block;
+            margin: 0 auto;
+            padding: 0 8px;
+          }
+        }
+        li.sign-up {
+          display: inline-block;
+          border: 1px solid #0099e8;
+          line-height: 28px;
+          border-radius: 4px;
+          .signup-text {
+            color: #0099e8;
+            display: block;
+            margin: 0 auto;
+            padding: 0 8px;
+          }
+
+        }
+        li.sign-up:hover {
+          background-color: #0099e8;
+          .signup-text {
+            color: #fff;
           }
         }
       }
@@ -105,12 +147,15 @@
       }
       &__link {
         display: block;
-        a{
+        a.app-link{
           float: left;
           margin: 24px 5px 0;
-          img{
+          img.app-image{
             width: 170px;
             height: 50px;
+          }
+          img.app-image:hover {
+            opacity: 0.8;
           }
         }
       }
@@ -144,6 +189,10 @@
         text-decoration: none;
         font-size: 20px;
         font-weight: bold;
+      }
+      a.category-link:hover {
+        opacity: 0.7;
+        text-decoration: underline;
       }
     }
     &__items {
@@ -230,9 +279,15 @@
           li.ios-logo {
             float: left;
           }
+          li.ios-logo:hover {
+            opacity: 0.8;
+          }
           li.android-logo {
             float: left;
             margin: 0 0 0 16px;
+          }
+          li.android-logo:hover {
+            opacity: 0.8;
           }
         }
       }
@@ -277,6 +332,10 @@
               text-decoration: none;
               font-size: 14px;
             }
+            a:hover {
+              text-decoration: underline;
+              opacity: 0.7;
+            }
           }
         }
       }
@@ -297,6 +356,9 @@
           a.active {
             opacity: 1.0;
           }
+          a:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -305,6 +367,9 @@
     margin: 40px 0 0;
     text-align: center;
     text-decoration: none;
+  }
+  a.footer-logo:hover {
+    opacity: 0.7;
   }
   p.footer-copyright {
     text-align: center;
@@ -329,7 +394,7 @@
   &__text {
     margin: 32px 0 0;
   }
-  i.fas.fa-camera {
+  i.fa.fa-camera {
     font-size: 54px;
   }
 }

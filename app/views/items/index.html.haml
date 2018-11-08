@@ -1,34 +1,6 @@
 %body
   .contains
-    .header
-      .header-contents
-        .header-contents__top.clearfix
-          %h1.header-contents__top-left
-            %a{:href => "https://www.mercari.com/jp/"}
-              %img{:alt => "mercari", :height => "36", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2900942513", :width => "134"}/
-          %form.header-contents__top-right{:action => "https://www.mercari.com/jp/search/"}
-            %input.input-default{:name => "keyword", :placeholder => "キーワードから探す", :type => "search", :value => ""}/
-            =fa_icon 'search', class: 'icon-search'
-        .header-contents__bottom.clearfix
-          .header-contents__bottom-left
-            %ul.genre-ul
-              %li.genre-li
-                %a.category-list{href: ""} カテゴリーから探す
-              %li.genre-li
-                %a.brand-list{href: ""} ブランドから探す
-          .header-contents__bottom-right
-            %ul.user
-              %li.user-li
-                %a.user-link{href: ""}
-                  .user-box
-                    %img.user-image{src: "https://pbs.twimg.com/profile_images/581025665727655936/9CnwZZ6j.jpg", :alt => "", width: '32'}/
-                  .user-box マイページ
-              %li.user-li
-                %i.far.fa-bell.icon
-                %span お知らせ
-              %li.user-li
-                =fa_icon 'check'
-                %span やることリスト
+    = render 'shared/header'
 
     %main
       %section.image-top
@@ -43,221 +15,56 @@
               %br/
               購入時も安心な独自システムのアプリです
             .image-top__box-left__link
-              %a{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
-                %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2960600120"}/
-              %a{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
-                %img{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2960600120"}/
-          %img.image-top__box-left__visual{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?2960600120"}/
+              = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank", class: "app-link" do
+                = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?582886128", alt: "", class: "app-image"
+              = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank", class: "app-link" do
+                = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2960600120", alt: "", class: "app-image"
+          %img.image-top__box-left__visual{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?2960600120"}/
+
       %section.category
         %h2.category-title ピックアップカテゴリー
         %section.category-container
           %h3.category-container__name
-            %a.category-link{href: ""} レディース新着アイテム
+            = link_to "レディース新着アイテム", root_path, class: "category-link"
           .category-container__items
-            .category-container__items-box
-              %a{href: ""}
-                %img.item-image{:alt => "ラップスカート ポンチョ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370"}/
-              .category-container__items-box__name
-                %h3.item-name ラップスカートポンチョ
-                .item-details
-                  .item-price ¥ 2,500
-                  .item-like
-                    %i.far.fa-heart.icon
-                    %span 3
-                  %p.item-tax (税込)
-            .category-container__items-box
-              %a{href: ""}
-                %img.item-image{:alt => "ラップスカート ポンチョ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370"}/
-              .category-container__items-box__name
-                %h3.item-name ラップスカートポンチョ
-                .item-details
-                  .item-price ¥ 2,500
-                  .item-like
-                    %i.far.fa-heart.icon
-                    %span 3
-                  %p.item-tax (税込)
-            .category-container__items-box
-              %a{href: ""}
-                %img.item-image{:alt => "ラップスカート ポンチョ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370"}/
-              .category-container__items-box__name
-                %h3.item-name ラップスカートポンチョ
-                .item-details
-                  .item-price ¥ 2,500
-                  .item-like
-                    %i.far.fa-heart.icon
-                    %span 3
-                  %p.item-tax (税込)
-            .category-container__items-box
-              %a{href: ""}
-                %img.item-image{:alt => "ラップスカート ポンチョ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370"}/
-              .category-container__items-box__name
-                %h3.item-name ラップスカートポンチョ
-                .item-details
-                  .item-price ¥ 2,500
-                  .item-like
-                    %i.far.fa-heart.icon
-                    %span 3
-                  %p.item-tax (税込)
+            - @item_woman.each do |woman|
+              .category-container__items-box
+                = link_to item_path(woman) do
+                  = image_tag woman.images.first.image_url, alt: "レデース", class: "item-image"
+                .category-container__items-box__name
+                  %h3.item-name
+                    = woman.name
+                  .item-details
+                    .item-price ¥
+                    = woman.price
+                    .item-like
+                      %i.far.fa-heart.icon
+                      %span 3
+                    %p.item-tax (税込)
           .category-container__link
             %a.link-name{href: ""} すべての商品を見る
+
       %section.category
         %h2.category-title ピックアップブランド
         %section.category-container
           %h3.category-container__name
             %a.category-link{href: ""} シャネル新着アイテム
           .category-container__items
-            .category-container__items-box
-              %a{href: ""}
-                %img.item-image{:alt => "ラップスカート ポンチョ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370"}/
-              .category-container__items-box__name
-                %h3.item-name ラップスカートポンチョ
-                .item-details
-                  .item-price ¥ 2,500
-                  .item-like
-                    %i.far.fa-heart.icon
-                    %span 3
-                  %p.item-tax (税込)
-            .category-container__items-box
-              %a{href: ""}
-                %img.item-image{:alt => "ラップスカート ポンチョ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370"}/
-              .category-container__items-box__name
-                %h3.item-name ラップスカートポンチョ
-                .item-details
-                  .item-price ¥ 2,500
-                  .item-like
-                    %i.far.fa-heart.icon
-                    %span 3
-                  %p.item-tax (税込)
-            .category-container__items-box
-              %a{href: ""}
-                %img.item-image{:alt => "ラップスカート ポンチョ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370"}/
-              .category-container__items-box__name
-                %h3.item-name ラップスカートポンチョ
-                .item-details
-                  .item-price ¥ 2,500
-                  .item-like
-                    %i.far.fa-heart.icon
-                    %span 3
-                  %p.item-tax (税込)
-            .category-container__items-box
-              %a{href: ""}
-                %img.item-image{:alt => "ラップスカート ポンチョ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m12360797625_1.jpg?1539167370"}/
-              .category-container__items-box__name
-                %h3.item-name ラップスカートポンチョ
-                .item-details
-                  .item-price ¥ 2,500
-                  .item-like
-                    %i.far.fa-heart.icon
-                    %span 3
-                  %p.item-tax (税込)
+            - @item_chanel.each do |chanel|
+              .category-container__items-box
+                = link_to item_path(chanel) do
+                  = image_tag chanel.images.first.image_url, alt: "シャネル", class: "item-image"
+                .category-container__items-box__name
+                  %h3.item-name
+                    = chanel.name
+                  .item-details
+                    .item-price ¥
+                    = chanel.price
+                    .item-like
+                      %i.far.fa-heart.icon
+                      %span 3
+                    %p.item-tax (税込)
           .category-container__link
             %a.link-name{href: ""} すべての商品を見る
 
-    %aside.app-banner
-      .app-banner__contain
-        .app-banner__contain-inner
-          %h2.banner-title スマホでかんたんフリマアプリ
-          %p.banner-text 今すぐ無料ダウンロード！
-          .app-banner__contain-inner__logo
-            %img.logo-left{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?2960600120", :width => "68"}/
-            %ul.clearfix
-              %li.ios-logo
-                %a{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
-                  %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2960600120", :width => "133"}/
-              %li.android-logo
-                %a{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
-                  %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2960600120", :width => "133"}/
-        %img.logo-right{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?2960600120"}/
-
-    %footer.footer
-      .footer-contents
-        %ul.content
-          %li.footer-cell
-            %h2.footer-head メルカリについて
-            %ul.footer-bottoms
-              %li
-                %a{:href => "https://about.mercari.com/"} 会社概要（運営会社）
-              %li
-                %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
-              %li
-                %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
-              %li
-                %a{:href => "https://www.mercari.com/jp/tos_paid_point/"} メルカリ利用規約・有償ポイントに関する特約
-              %li
-                %a{:href => "https://www.mercari.com/jp/tos_smartphone_support/"} あんしんスマホサポート制度に関する利用特約
-              %li
-                %a{:href => "https://www.mercari.com/jp/compliance/"} コンプライアンスポリシー
-              %li
-                %a{:href => "https://www.mercari.com/jp/data_security/"} 個人データの安全管理に係る基本方針
-              %li
-                %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-              %li
-                %a{:href => "https://www.mercari.com/jp/shikin_kessai/"} 資金決済法に基づく表示
-              %li
-                %a{:href => "https://about.mercari.com/csr/safety/"} 法令順守と犯罪抑止のために
-              %li
-                %a{:href => "https://www.mercari.com/jp/jobs/"} 採用情報
-          %li.footer-cell
-            %h2.footer-head メルカリを見る
-            %ul.footer-bottoms
-              %li
-                %a{:href => "https://www.mercari.com/jp/category/"} カテゴリー一覧
-              %li
-                %a{:href => "https://www.mercari.com/jp/brand/"} ブランド一覧
-              %li
-                %a{:href => "https://www.mercari.com/jp/area/"} 出品地域一覧
-              %li
-                %a{:href => "https://jp-news.mercari.com/", :target => "_blank"} 公式ブログ
-              %li
-                %a{:href => "https://twitter.com/mercari_jp", :target => "_blank"} 公式Twitter
-              %li
-                %a{:href => "https://www.facebook.com/mercarijp", :target => "_blank"} 公式Facebook
-          %li.footer-cell
-            %h2.footer-head ヘルプ＆ガイド
-            %ul.footer-bottoms
-              %li
-                %a{:href => "https://www.mercari.com/jp/help_center/"} メルカリガイド
-              %li
-                %a{:href => "https://www.mercari.com/jp/logo-guidelines/"} メルカリロゴ利用ガイドライン
-              %li
-                %a{:href => "https://about.mercari.com/press/news/"} お知らせ
-              %li
-                %a{:href => "https://www.mercari.com/jp/rakuraku-mercari/"} らくらくメルカリ便とは
-              %li
-                %a{:href => "https://www.mercari.com/jp/yuyu-mercari/"} ゆうゆうメルカリ便とは
-              %li
-                %a{:href => "https://www.mercari.com/jp/rakuraku-ogata/"} 大型らくらくメルカリ便とは
-              %li
-                %a{:href => "https://www.mercari.com/jp/guide/car/"} 車体取引ガイド
-              %li
-                %a{:href => "https://www.mercari.com/jp/refund-returns/"} 返品・返金ポリシー
-              %li
-                %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"} メルカリあんしん・あんぜん宣言！
-              %li
-                %a{:href => "https://www.mercari.com/jp/authenticity/"} 偽ブランド品撲滅への取り組み
-              %li
-                %a{:href => "https://www.mercari.com/jp/box/"} メルカリボックス
-          %li.footer-cell
-            %h2.footer-head 国
-            %ul.footer-lang
-              %li
-                %a{:href => "https://www.mercari.com/"}
-                  %img{alt: "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?2960600120", width: "22"}>/
-                  United States
-              %li
-                %a{:href => "https://www.mercari.com/uk/"}
-                  %img{:alt => "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?2960600120", width: "22"}>/
-                  United Kingdom
-              %li
-                %a.active{:href => "https://www.mercari.com/jp/"}
-                  %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?2960600120", width: "22"}>/
-                  日本
-      %a.footer-logo{:href => "https://www.mercari.com/jp/"}
-        %img{alt: "mercari", height: "33", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2960600120", width: "115"}/
-      %p.footer-copyright
-        %small © 2018 Mercari
-
-    %a.footer-sell-btn{href: ""}
-      .footer-sell-btn__text 出品
-      %i.fas.fa-camera
-
+    = render "shared/footer"
