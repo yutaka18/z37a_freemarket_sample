@@ -7,8 +7,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
-    redirect_to action: :new
+    if @item.save
+      redirect_to action: :new, notice: '商品を出品しました'
+    else
+      redirect_to action: :new, alert: '必須項目を入力してください'
+    end
   end
 
   def buy

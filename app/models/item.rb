@@ -6,6 +6,19 @@ class Item < ApplicationRecord
 
   accepts_nested_attributes_for :images
 
+  validates :name, length: { maximum: 40 }, presence: true
+  validates :content, length: { maximum: 1000 }, presence: true
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }, presence: true
+  validates :condition,
+            :category_large_id,
+            :category_medium_id,
+            :category_small_id,
+            :burden,
+            :shipping_method,
+            :from_prefecture,
+            :shipping_days,
+            presence: true
+
   enum condition: {
     '新品、未使用': 1,
     '未使用に近い': 2,
