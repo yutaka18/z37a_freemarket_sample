@@ -67,6 +67,10 @@ group :test do
   gem 'faker'
 end
 
+group :development, :staging do
+  gem 'rubocop', '~> 0.55.0', require: false
+end
+
 group :production do
   gem 'unicorn'
 end
