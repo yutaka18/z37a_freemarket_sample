@@ -6,9 +6,9 @@ class Item < ApplicationRecord
 
   accepts_nested_attributes_for :images
 
-  validates :name, length: { maximum: 40 }, presence: true
-  validates :content, length: { maximum: 1000 }, presence: true
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }, presence: true
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :content, presence: true, length: { maximum: 1000 }
+  validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   validates :condition,
             :category_large_id,
             :category_medium_id,
