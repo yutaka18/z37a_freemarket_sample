@@ -48,7 +48,7 @@
                 = f.password_field :password_confirmation, autocomplete: "current-password", placeholder: "パスワード(６文字以上)"
               %input{:name => "after_save_callback", :type => "hidden", :value => ""}/
               .form-group
-                .g-recaptcha{"data-sitekey" =>  ENV["RECAPTCHA_SITE_KEY"]}
+                .g-recaptcha{"data-callback" => "validateRecaptcha","data-sitekey" =>  ENV["RECAPTCHA_SITE_KEY"]}
               .actions
-                = f.submit "次へ進む"
+                = f.submit "次へ進む", class: "recaptcha", disabled: "disabled"
     = render "shared/user_footer"
