@@ -9,13 +9,14 @@ Rails.application.routes.draw do
   resources  :items do
     get 'buy' => 'items#buy'
   end
-
-  resources :destinations
+  resources  :users do
+    resources :destinations, only: [:edit, :new, :create]
+  end
 
   resource   :user
   scope module: :users do
     resource :card, only: :show
-    resources :profiles, only: [:edit, :index,]
+    resources :profiles, only: [:edit, :index]
     resource :identification, only: :edit
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
