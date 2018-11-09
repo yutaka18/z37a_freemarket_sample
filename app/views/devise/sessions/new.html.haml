@@ -24,9 +24,9 @@
             .field
               = f.password_field :password, autocomplete: "off", placeholder: "パスワード"
             .form-group
-              .g-recaptcha{"data-sitekey" => "6LfxvHgUAAAAABvjT3CdoXb371mPnvTXFdVie8a4"}
+              .g-recaptcha{"data-callback" => "validateRecaptcha","data-sitekey" =>  "6LfxvHgUAAAAABvjT3CdoXb371mPnvTXFdVie8a4"}
             .actions
-              = f.submit "ログイン"
+              = f.submit "ログイン", class: "recaptcha", disabled: "disabled"
             .password-forgot
               - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
                 = link_to "パスワードをお忘れの方", new_password_path(resource_name)
