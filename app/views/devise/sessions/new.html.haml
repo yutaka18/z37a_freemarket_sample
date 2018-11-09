@@ -24,7 +24,7 @@
             .field
               = f.password_field :password, autocomplete: "off", placeholder: "パスワード"
             .form-group
-              .g-recaptcha{"data-callback" => "validateRecaptcha","data-sitekey" =>  ENV["RECAPTCHA_SITE_KEY"]}
+              .g-recaptcha{"data-callback" => "validateRecaptcha","data-sitekey" =>  "6LfxvHgUAAAAABvjT3CdoXb371mPnvTXFdVie8a4"}
             .actions
               = f.submit "ログイン", class: "recaptcha", disabled: "disabled"
             .password-forgot
