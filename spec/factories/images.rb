@@ -1,6 +1,7 @@
 FactoryBot.define do
 
   factory :image do
-    image_url           { "halloween_mark_pumpkin.png" }
+    item_id         { 1 }
+    image_url       { File.open(Rails.root.join('spec/fixture/halloween_mark_pumpkin.png')) }
   end
 end

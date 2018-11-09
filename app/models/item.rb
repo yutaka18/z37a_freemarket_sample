@@ -26,8 +26,8 @@ class Item < ApplicationRecord
     'やや傷や汚れあり': 4,
     '傷や汚れあり': 5,
     '全体的に状態が悪い': 6
-}
-enum size: {
+    }
+  enum size: {
     'XS以下': 1,
     'S': 2,
     'M': 3,
@@ -35,12 +35,12 @@ enum size: {
     'XL': 5,
     'XL以上': 6,
     'FREE SIZE': 7
-}
-enum burden: {
+    }
+  enum burden: {
     '着払い(購入者負担)': 1,
     '送料込み(出品者負担)': 2
-}
-enum shipping_method: {
+    }
+  enum shipping_method: {
     '未定': 1,
     'クロネコヤマト': 2,
     'ゆうパック': 3,
@@ -54,8 +54,8 @@ enum shipping_method: {
     'ゆうパック': 11,
     'クリックポスト': 12,
     'ゆうパケット': 13
-}
-enum from_prefecture: {
+    }
+  enum from_prefecture: {
     '北海道': 1,
     '青森県': 2,
     '岩手県': 3,
@@ -103,11 +103,11 @@ enum from_prefecture: {
     '宮崎県': 45,
     '鹿児島県': 46,
     '沖縄県': 47,
-}
-enum shipping_days: {
+    }
+  enum shipping_days: {
     '1~2日で発送': 1,
     '2~3日で発送': 2,
     '4~7日で発送': 3
-}
+    }
 
 end
