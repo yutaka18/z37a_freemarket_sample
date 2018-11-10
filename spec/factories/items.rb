@@ -1,20 +1,20 @@
 FactoryBot.define do
 
   factory :item do
-    name                { Faker::GameOfThrones.character }
-    content             { Faker::GameOfThrones.quote }
-    price               { Faker::Number.between(300, 9999999) }
-    condition           { Faker::Number.between(1, 6) }
-    size                { "M" }
-    category_large_id   { Faker::Number.between(1, 13) }
-    category_medium_id  { Faker::Number.between(14, 17) }
-    category_small_id   { Faker::Number.between(18, 33) }
-    brand               { Faker::GameOfThrones.house }
-    burden              { Faker::Number.between(1, 2) }
-    shipping_method     { Faker::Number.between(5, 13) }
-    from_prefecture     { Faker::Number.between(1, 47) }
-    shipping_days       { Faker::Number.between(1, 3) }
-    user_id             { 1 }
-    buyer_id            { 1 }
+    name               { "シャツ" }
+    content            { "夏物です" }
+    price              { 10000 }
+    condition          { "新品、未使用" }
+    size               { "M" }
+    category_large_id  { 1 }
+    category_medium_id { 14 }
+    category_small_id  { 18 }
+    brand              { "ノーブランド" }
+    burden             { "着払い(購入者負担)" }
+    shipping_method    { "未定" }
+    from_prefecture    { "三重県" }
+    shipping_days      { "2~3日で発送" }
+    user_id            { 1 }
+    buyer_id           { 1 }
   end
 end
