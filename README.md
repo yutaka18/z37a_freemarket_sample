@@ -112,3 +112,5 @@
 
 ### association
 - belongs_to : items
+
+
