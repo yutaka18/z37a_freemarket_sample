@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :move_to_index, except: [:index]
+
   def index
     @item_woman = Item.where(category_large_id: 1).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
     # @item_mens = Item.where(category_large_id: 2).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
@@ -19,9 +21,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to action: :new, notice: '商品を出品しました'
+      redirect_to :root
     else
-      redirect_to action: :new, alert: '必須項目を入力してください'
+      redirect_to action: :new
     end
   end
 
@@ -29,6 +31,9 @@ class ItemsController < ApplicationController
   end
 
   private
+  def move_to_index
+    redirect_to new_user_session_path unless user_signed_in?
+  end
 
   def item_params
     params.require(:item).permit(
