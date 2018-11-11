@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181107083012) do
+ActiveRecord::Schema.define(version: 20181111092632) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
@@ -49,9 +49,6 @@ ActiveRecord::Schema.define(version: 20181107083012) do
     t.integer "price", null: false
     t.integer "condition", null: false
     t.string "size", default: "", null: false
-    t.integer "category_large_id", null: false
-    t.integer "category_medium_id"
-    t.integer "category_small_id"
     t.integer "burden", null: false
     t.integer "shipping_method", null: false
     t.integer "from_prefecture", null: false
@@ -61,12 +58,30 @@ ActiveRecord::Schema.define(version: 20181107083012) do
     t.datetime "updated_at", null: false
     t.string "brand"
     t.integer "buyer_id"
+    t.bigint "category_id"
+    t.bigint "mitem_id"
+    t.bigint "sitem_id"
     t.index ["burden"], name: "index_items_on_burden"
+    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["condition"], name: "index_items_on_condition"
+    t.index ["mitem_id"], name: "index_items_on_mitem_id"
     t.index ["name"], name: "index_items_on_name"
     t.index ["price"], name: "index_items_on_price"
+    t.index ["sitem_id"], name: "index_items_on_sitem_id"
     t.index ["size"], name: "index_items_on_size"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "mitems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sitems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trading_statuses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -93,6 +108,9 @@ ActiveRecord::Schema.define(version: 20181107083012) do
   end
 
   add_foreign_key "images", "items"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "mitems"
+  add_foreign_key "items", "sitems"
   add_foreign_key "items", "users"
   add_foreign_key "trading_statuses", "items"
 end
