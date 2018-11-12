@@ -1,0 +1,2 @@
+module Users::SellsHelper
+end
