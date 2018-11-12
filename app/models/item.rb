@@ -1,7 +1,9 @@
 class Item < ApplicationRecord
   belongs_to :user, optional: true
   has_many :images, dependent: :destroy
-  has_many :categories
+  belongs_to :category, optional: true
+  belongs_to :mitem, optional: true
+  belongs_to :sitem, optional: true
   has_one :trading_status
 
   accepts_nested_attributes_for :images
@@ -10,9 +12,9 @@ class Item < ApplicationRecord
   validates :content, presence: true, length: { maximum: 1000 }
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   validates :condition,
-            :category_large_id,
-            :category_medium_id,
-            :category_small_id,
+            :category_id,
+            :mitem_id,
+            :sitem_id,
             :burden,
             :shipping_method,
             :from_prefecture,
