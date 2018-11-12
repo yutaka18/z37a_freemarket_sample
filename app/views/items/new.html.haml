@@ -41,13 +41,13 @@
                   カテゴリー
                   %span.form-require 必須
                 .select-box
-                  = f.select :category_large_id, @categories.map{|t| [t.name, t.id]}, {prompt: '---'}, {class: 'select-box-default'}
+                  = f.select :category_id, @category_large.map{|t| [t.name, t.id]}, {prompt: '---'}, {class: 'select-box-default'}
                   = fa_icon 'angle-down'
                 .select-box
-                  = f.select :category_medium_id, @categories.map{|t| [t.name, t.id]}, {prompt: '---'}, {class: 'select-box-default'}
+                  = f.select :mitem_id, @category_medium.map{|t| [t.name, t.id]}, {prompt: '---'}, {class: 'select-box-default'}
                   = fa_icon 'angle-down'
                 .select-box
-                  = f.select :category_small_id, @categories.map{|t| [t.name, t.id]}, {prompt: '---'}, {class: 'select-box-default'}
+                  = f.select :sitem_id, @category_small.map{|t| [t.name, t.id]}, {prompt: '---'}, {class: 'select-box-default'}
                   = fa_icon 'angle-down'
               .form-group
                 %label
