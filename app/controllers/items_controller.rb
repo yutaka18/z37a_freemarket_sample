@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index]
 
   def index
-    @item_woman = Item.where(category_large_id: 1).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
+    @item_woman = Item.where(category_id: 1).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
     # @item_mens = Item.where(category_large_id: 2).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
     # @item_kids = Item.where(category_large_id: 3).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
     # @item_cosmetics = Item.where(category_large_id: 4).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
@@ -15,7 +15,9 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    @categories = Category.all
+    @category_large = Category.all
+    @category_medium = Mitem.all
+    @category_small = Sitem.all
   end
 
   def create
@@ -42,9 +44,9 @@ class ItemsController < ApplicationController
       :price,
       :condition,
       :size,
-      :category_large_id,
-      :category_medium_id,
-      :category_small_id,
+      :category_id,
+      :mitem_id,
+      :sitem_id,
       :brand,
       :burden,
       :shipping_method,

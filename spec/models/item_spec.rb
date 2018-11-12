@@ -89,21 +89,21 @@ describe Item do
       end
 
       it "is invalid without a category_large_id" do
-        item = build(:item, category_large_id: nil)
+        item = build(:item, category_id: nil)
         item.valid?
-        expect(item.errors[:category_large_id]).to include("を入力してください")
+        expect(item.errors[:category_id]).to include("を入力してください")
       end
 
       it "is invalid without a category_medium_id" do
-        item = build(:item, category_medium_id: nil)
+        item = build(:item, mitem_id: nil)
         item.valid?
-        expect(item.errors[:category_medium_id]).to include("を入力してください")
+        expect(item.errors[:mitem_id]).to include("を入力してください")
       end
 
       it "is invalid without a category_small_id" do
-        item = build(:item, category_small_id: nil)
+        item = build(:item, sitem_id: nil)
         item.valid?
-        expect(item.errors[:category_small_id]).to include("を入力してください")
+        expect(item.errors[:sitem_id]).to include("を入力してください")
       end
     end
 
