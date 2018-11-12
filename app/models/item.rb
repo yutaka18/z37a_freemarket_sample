@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
   belongs_to :user, optional: true
   has_many :images, dependent: :destroy
-  belongs_to :category, optional: true
-  belongs_to :mitem, optional: true
-  belongs_to :sitem, optional: true
+  belongs_to :category
+  belongs_to :mitem
+  belongs_to :sitem
   has_one :trading_status
 
   accepts_nested_attributes_for :images
