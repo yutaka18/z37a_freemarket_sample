@@ -25,7 +25,7 @@
         %h2.category-title ピックアップカテゴリー
         %section.category-container
           %h3.category-container__name
-            = link_to "レディース新着アイテム", root_path, class: "category-link"
+            = link_to "レディース 新着アイテム", root_path, class: "category-link"
           .category-container__items
             - @item_woman.each do |woman|
               .category-container__items-box
@@ -44,13 +44,76 @@
           .category-container__link
             %a.link-name{href: ""} すべての商品を見る
 
+        %section.category-container
+          %h3.category-container__name
+            = link_to "メンズ 新着アイテム", root_path, class: "category-link"
+          .category-container__items
+            - @item_mens.each do |men|
+              .category-container__items-box
+                = link_to item_path(men) do
+                  = image_tag men.images.first.image_url, alt: "メンズ", class: "item-image"
+                .category-container__items-box__name
+                  %h3.item-name
+                    = men.name
+                  .item-details
+                    .item-price ¥
+                    = men.price
+                    .item-like
+                      %i.far.fa-heart.icon
+                      %span 3
+                    %p.item-tax (税込)
+          .category-container__link
+            %a.link-name{href: ""} すべての商品を見る
+
+        %section.category-container
+          %h3.category-container__name
+            = link_to "ベビー・キッズ 新着アイテム", root_path, class: "category-link"
+          .category-container__items
+            - @item_kids.each do |kid|
+              .category-container__items-box
+                = link_to item_path(kid) do
+                  = image_tag kid.images.first.image_url, alt: "ベビー・キッズ", class: "item-image"
+                .category-container__items-box__name
+                  %h3.item-name
+                    = kid.name
+                  .item-details
+                    .item-price ¥
+                    = kid.price
+                    .item-like
+                      %i.far.fa-heart.icon
+                      %span 3
+                    %p.item-tax (税込)
+          .category-container__link
+            %a.link-name{href: ""} すべての商品を見る
+
+        %section.category-container
+          %h3.category-container__name
+            = link_to "コスメ・香水・美容 新着アイテム", root_path, class: "category-link"
+          .category-container__items
+            - @item_cosmetics.each do |cos|
+              .category-container__items-box
+                = link_to item_path(cos) do
+                  = image_tag cos.images.first.image_url, alt: "ベビー・キッズ", class: "item-image"
+                .category-container__items-box__name
+                  %h3.item-name
+                    = cos.name
+                  .item-details
+                    .item-price ¥
+                    = cos.price
+                    .item-like
+                      %i.far.fa-heart.icon
+                      %span 3
+                    %p.item-tax (税込)
+          .category-container__link
+            %a.link-name{href: ""} すべての商品を見る
+
       %section.category
         %h2.category-title ピックアップブランド
         %section.category-container
           %h3.category-container__name
-            %a.category-link{href: ""} シャネル新着アイテム
+            = link_to "シャネル 新着アイテム", root_path, class: "category-link"
           .category-container__items
-            - @item_chanel.each do |chanel|
+            - @item_chanels.each do |chanel|
               .category-container__items-box
                 = link_to item_path(chanel) do
                   = image_tag chanel.images.first.image_url, alt: "シャネル", class: "item-image"
@@ -60,6 +123,69 @@
                   .item-details
                     .item-price ¥
                     = chanel.price
+                    .item-like
+                      %i.far.fa-heart.icon
+                      %span 3
+                    %p.item-tax (税込)
+          .category-container__link
+            %a.link-name{href: ""} すべての商品を見る
+
+        %section.category-container
+          %h3.category-container__name
+            = link_to "ルイヴィトン 新着アイテム", root_path, class: "category-link"
+          .category-container__items
+            - @item_vuttons.each do |vutton|
+              .category-container__items-box
+                = link_to item_path(vutton) do
+                  = image_tag vutton.images.first.image_url, alt: "シャネル", class: "item-image"
+                .category-container__items-box__name
+                  %h3.item-name
+                    = vutton.name
+                  .item-details
+                    .item-price ¥
+                    = vutton.price
+                    .item-like
+                      %i.far.fa-heart.icon
+                      %span 3
+                    %p.item-tax (税込)
+          .category-container__link
+            %a.link-name{href: ""} すべての商品を見る
+
+        %section.category-container
+          %h3.category-container__name
+            = link_to "シュプリーム 新着アイテム", root_path, class: "category-link"
+          .category-container__items
+            - @item_supremes.each do |sup|
+              .category-container__items-box
+                = link_to item_path(sup) do
+                  = image_tag sup.images.first.image_url, alt: "シャネル", class: "item-image"
+                .category-container__items-box__name
+                  %h3.item-name
+                    = sup.name
+                  .item-details
+                    .item-price ¥
+                    = sup.price
+                    .item-like
+                      %i.far.fa-heart.icon
+                      %span 3
+                    %p.item-tax (税込)
+          .category-container__link
+            %a.link-name{href: ""} すべての商品を見る
+
+        %section.category-container
+          %h3.category-container__name
+            = link_to "ナイキ 新着アイテム", root_path, class: "category-link"
+          .category-container__items
+            - @item_nikes.each do |nike|
+              .category-container__items-box
+                = link_to item_path(nike) do
+                  = image_tag nike.images.first.image_url, alt: "シャネル", class: "item-image"
+                .category-container__items-box__name
+                  %h3.item-name
+                    = nike.name
+                  .item-details
+                    .item-price ¥
+                    = nike.price
                     .item-like
                       %i.far.fa-heart.icon
                       %span 3
