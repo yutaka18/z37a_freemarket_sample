@@ -16,5 +16,6 @@ FactoryBot.define do
     shipping_days      { "2~3日で発送" }
     user_id            { 1 }
     buyer_id           { 1 }
+    created_at         { Faker::Time.between(2.days.ago, Time.now, :all) }
   end
 end

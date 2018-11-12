@@ -2,14 +2,34 @@ require 'rails_helper'
 
 describe ItemsController, type: :controller do
   let(:user) { create(:user) }
-  let(:item) { create(:item) }
+  let(:item) { create(:item, user_id: user.id) }
+
+  describe 'GET #index' do
+
+    it 'populates a @item_woman of items ordered by created_at DESC' do
+      item_woman = create_list(:item, 4, category_large_id: 1, user_id: user.id)
+      get :index
+      expect(assigns(:item_woman)).to match(item_woman.sort{ |a, b| b.created_at <=> a.created_at } )
+    end
+
+    it 'populates a @item_chanel of item ordered by created_at DESC' do
+      item_chanel = create_list(:item, 4, brand: "シャネル", user_id: user.id)
+      get :index
+      expect(assigns(:item_chanel)).to match(item_chanel.sort{ |a, b| b.created_at <=> a.created_at })
+    end
+
+    it 'renders the :index template' do
+      get :index
+      expect(response).to render_template :index
+    end
+  end
 
   describe 'GET #new' do
     context 'log in' do
       before do
         login user
       end
-      it "renders the :new template" do
+      it 'renders the :new template' do
         get :new
         expect(response).to render_template :new
       end

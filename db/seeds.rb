@@ -11,6 +11,6 @@ require "csv"
 categories_csv = CSV.readlines("db/categories.csv")
 categories_csv.shift
 categories_csv.each do |row|
-  Categories.create(name: row[1], created_at: row[2], updated_at: row[3])
+  Category.create(name: row[1], created_at: row[2], updated_at: row[3])
   # idを除くカラム名を記述する
 end
