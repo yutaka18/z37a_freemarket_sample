@@ -1,0 +1,2 @@
+class Mitem < ApplicationRecord
+end
