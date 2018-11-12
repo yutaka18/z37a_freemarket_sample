@@ -3,13 +3,13 @@ class ItemsController < ApplicationController
 
   def index
     @item_woman = Item.where(category_id: 1).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
-    # @item_mens = Item.where(category_large_id: 2).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
-    # @item_kids = Item.where(category_large_id: 3).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
-    # @item_cosmetics = Item.where(category_large_id: 4).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
-    @item_chanel = Item.where(brand: "シャネル").order("created_at DESC").limit(4)
-    # @item_vutton = Item.where(brand: "ルイヴィトン").order("created_at DESC").limit(4)
-    # @item_supreme = Item.where(brand: "シュプリーム").order("created_at DESC").limit(4)
-    # @item_nike = Item.where(brand: "ナイキ").order("created_at DESC").limit(4)
+    @item_mens = Item.where(category_id: 2).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
+    @item_kids = Item.where(category_id: 3).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
+    @item_cosmetics = Item.where(category_id: 4).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
+    @item_chanels = Item.where(brand: "シャネル").order("created_at DESC").limit(4)
+    @item_vuttons = Item.where(brand: "ルイヴィトン").order("created_at DESC").limit(4)
+    @item_supremes = Item.where(brand: "シュプリーム").order("created_at DESC").limit(4)
+    @item_nikes = Item.where(brand: "ナイキ").order("created_at DESC").limit(4)
   end
 
   def new
