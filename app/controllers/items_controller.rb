@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @item_woman = Item.where(category_id: 1).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
@@ -27,6 +27,11 @@ class ItemsController < ApplicationController
     else
       redirect_to action: :new
     end
+  end
+
+  def show
+    @item = Item.find(params[:id])
+    @user_items = Item.where(user_id: @item.id).limit(6)
   end
 
   def buy
