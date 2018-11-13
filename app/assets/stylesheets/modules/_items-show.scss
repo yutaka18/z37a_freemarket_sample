@@ -32,6 +32,9 @@
         .owl-stage-outer {
           position: relative;
           overflow: hidden;
+          .owl-stage {
+            position: relative;
+          }
         }
         .owl-item {
           min-height: 1px;
@@ -80,10 +83,10 @@
             display: inline-block;
             width: 24%;
             max-height: 90px;
-            opacity: .5;
-            .active {
-              opacity: 1;
-            }
+            opacity: .4;
+          }
+          .active {
+            opacity: 1;
           }
         }
       }
