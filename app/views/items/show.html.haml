@@ -9,7 +9,6 @@
           .owl-carousel.owl-loaded.owl-drag
             .owl-stage-outer
               .owl-stage{style: "left: 0px; width: 1200px;"}
-
                 .owl-item.active{style: "width: 300px;"}
                   .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
                     = image_tag @images.first.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.first.image_url, style: "opacity: 1;"
@@ -22,11 +21,9 @@
                 .owl-item{style: "width: 300px;"}
                   .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
                     = image_tag @images.fourth.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.fourth.image_url, style: "opacity: 1;"
-
             .owl-nav.disabled
               .owl-prev prev
               .owl-next next
-
             %ul.owl-dots.disabled
               %li.owl-dot.active
                 = image_tag @images.first.image_url
@@ -36,8 +33,6 @@
                 = image_tag @images.third.image_url
               %li.owl-dot
                 = image_tag @images.fourth.image_url
-
-
         %table.item-detail-table
           %tbody
             %tr
