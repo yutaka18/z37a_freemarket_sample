@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resource :card, only: :show
     resources :profiles, only: [:edit, :index]
     resource :identification, only: :edit
-    resource :sell, only: :show
+    resource :sell, only: [:show, :edit]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
