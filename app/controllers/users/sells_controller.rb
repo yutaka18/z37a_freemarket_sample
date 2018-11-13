@@ -6,6 +6,10 @@ class Users::SellsController < ApplicationController
     # @items = Item.find(params[:item_id])
   end
 
+  def edit
+    
+  end
+
   # private
 
   # def set_item
