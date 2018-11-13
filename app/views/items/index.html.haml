@@ -1,3 +1,4 @@
+
 %body
   .contains
     = render 'shared/header'
@@ -36,7 +37,7 @@
                     = woman.name
                   .item-details
                     .item-price ¥
-                    = woman.price
+                    = converting_to_jpy(woman.price)
                     .item-like
                       %i.far.fa-heart.icon
                       %span 3
@@ -57,7 +58,7 @@
                     = men.name
                   .item-details
                     .item-price ¥
-                    = men.price
+                    = converting_to_jpy(men.price)
                     .item-like
                       %i.far.fa-heart.icon
                       %span 3
@@ -78,7 +79,7 @@
                     = kid.name
                   .item-details
                     .item-price ¥
-                    = kid.price
+                    = converting_to_jpy(kid.price)
                     .item-like
                       %i.far.fa-heart.icon
                       %span 3
@@ -99,7 +100,7 @@
                     = cos.name
                   .item-details
                     .item-price ¥
-                    = cos.price
+                    = converting_to_jpy(cos.price)
                     .item-like
                       %i.far.fa-heart.icon
                       %span 3
@@ -122,7 +123,7 @@
                     = chanel.name
                   .item-details
                     .item-price ¥
-                    = chanel.price
+                    = converting_to_jpy(chanel.price)
                     .item-like
                       %i.far.fa-heart.icon
                       %span 3
@@ -143,7 +144,7 @@
                     = vutton.name
                   .item-details
                     .item-price ¥
-                    = vutton.price
+                    = converting_to_jpy(vutton.price)
                     .item-like
                       %i.far.fa-heart.icon
                       %span 3
@@ -164,7 +165,7 @@
                     = sup.name
                   .item-details
                     .item-price ¥
-                    = sup.price
+                    = converting_to_jpy(sup.price)
                     .item-like
                       %i.far.fa-heart.icon
                       %span 3
@@ -185,7 +186,7 @@
                     = nike.name
                   .item-details
                     .item-price ¥
-                    = nike.price
+                    = converting_to_jpy(nike.price)
                     .item-like
                       %i.far.fa-heart.icon
                       %span 3
