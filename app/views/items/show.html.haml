@@ -8,16 +8,36 @@
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
             .owl-stage-outer
-              .owl-stage{:style => "left: 0px; width: 300px;"}
-                .owl-item.active{:style => "width: 300px;"}
-                  .owl-item-inner.is-higher-width{"data-thumbnail-class-name" => " is-higher-width"}
-                    %img.owl-lazy{:alt => "ポーチ", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", :src => "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", :style => "opacity: 1;"}/
+              .owl-stage{style: "left: 0px; width: 1200px;"}
+
+                .owl-item.active{style: "width: 300px;"}
+                  .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                    = image_tag @images.first.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.first.image_url, style: "opacity: 1;"
+                .owl-item{style: "width: 300px;"}
+                  .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                    = image_tag @images.second.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.second.image_url, style: "opacity: 1;"
+                .owl-item{style: "width: 300px;"}
+                  .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                    = image_tag @images.third.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.third.image_url, style: "opacity: 1;"
+                .owl-item{style: "width: 300px;"}
+                  .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                    = image_tag @images.fourth.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.fourth.image_url, style: "opacity: 1;"
+
             .owl-nav.disabled
               .owl-prev prev
               .owl-next next
-            .owl-dots.disabled{:style => "display: none;"}
-              .owl-dot.active
-                %span
+
+            %ul.owl-dots.disabled
+              %li.owl-dot.active
+                = image_tag @images.first.image_url
+              %li.owl-dot
+                = image_tag @images.second.image_url
+              %li.owl-dot
+                = image_tag @images.third.image_url
+              %li.owl-dot
+                = image_tag @images.fourth.image_url
+
+
         %table.item-detail-table
           %tbody
             %tr
@@ -194,12 +214,12 @@
         %li
           %a.share-btn{"data-window-name" => "pinterest_window", :href => "http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fitem.mercari.com%2Fjp%2Fm81006698765%2F&media=https%3A%2F%2Fstatic-mercari-jp-imgtr2.akamaized.net%2Fitem%2Fdetail%2Forig%2Fphotos%2Fm81006698765_1.jpg%3F1540782839&description=%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA%E5%95%86%E5%93%81%3A%20%E3%83%9D%E3%83%BC%E3%83%81%20%23%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA", :target => "_blank"}
             %i.fab.fa-pinterest
+
     .items-in-user-profile
       %section.items-box-container.clearfix.items-box-overflow.items-in-user-profile
         %h2.items-box-head
           = link_to "#{@item.user.nickname}さんのその他の出品"
         .items-box-content.clearfix
-
           - @user_items.each do |u_item|
             %section.items-box
               = link_to item_path(@item) do
@@ -224,183 +244,39 @@
           - else
             = link_to "#{@item.brand}の#{@item.sitem.name} その他の商品"
         .items-box-content.clearfix
-          %section.items-box
-            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
-              %figure.items-box-photo
-                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
-              .items-box-body
-                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
-                .items-box-num.clearfix
-                  .items-box-price.font-5
-                    ¥ 2,500
-                  .items-box-likes.font-2
-                    %i.far.fa-heart
-                    %span 2
-                  %p.item-box-tax (税込)
-          %section.items-box
-            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
-              %figure.items-box-photo
-                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
-              .items-box-body
-                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
-                .items-box-num.clearfix
-                  .items-box-price.font-5
-                    ¥ 2,500
-                  .items-box-likes.font-2
-                    %i.far.fa-heart
-                    %span 2
-                  %p.item-box-tax (税込)
-          %section.items-box
-            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
-              %figure.items-box-photo
-                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
-              .items-box-body
-                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
-                .items-box-num.clearfix
-                  .items-box-price.font-5
-                    ¥ 2,500
-                  .items-box-likes.font-2
-                    %i.far.fa-heart
-                    %span 2
-                  %p.item-box-tax (税込)
-          %section.items-box
-            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
-              %figure.items-box-photo
-                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
-              .items-box-body
-                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
-                .items-box-num.clearfix
-                  .items-box-price.font-5
-                    ¥ 2,500
-                  .items-box-likes.font-2
-                    %i.far.fa-heart
-                    %span 2
-                  %p.item-box-tax (税込)
-          %section.items-box
-            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
-              %figure.items-box-photo
-                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
-              .items-box-body
-                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
-                .items-box-num.clearfix
-                  .items-box-price.font-5
-                    ¥ 2,500
-                  .items-box-likes.font-2
-                    %i.far.fa-heart
-                    %span 2
-                  %p.item-box-tax (税込)
-          %section.items-box
-            %a{:href => "https://item.mercari.com/jp/m15194849611/"}
-              %figure.items-box-photo
-                %img.is-higher-width.lazyloaded{:alt => "値下げ！バーバリー  ブランケット  サイズ120✖️160", "data-src" => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435", :src => "https://static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m15194849611_1.jpg?1540091435"}/
-              .items-box-body
-                %h3.items-box-name.font-2 値下げ！バーバリー  ブランケット  サイズ120✖️160
-                .items-box-num.clearfix
-                  .items-box-price.font-5
-                    ¥ 2,500
-                  .items-box-likes.font-2
-                    %i.far.fa-heart
-                    %span 2
-                  %p.item-box-tax (税込)
-    %aside.app-banner
-      .app-banner__contain
-        .app-banner__contain-inner
-          %h2.banner-title スマホでかんたんフリマアプリ
-          %p.banner-text 今すぐ無料ダウンロード！
-          .app-banner__contain-inner__logo
-            %img.logo-left{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?2960600120", :width => "68"}/
-            %ul.clearfix
-              %li.ios-logo
-                %a{:href => "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", :target => "_blank"}
-                  %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?2960600120", :width => "133"}/
-              %li.android-logo
-                %a{:href => "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", :target => "_blank"}
-                  %img{:alt => "", :height => "40", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2960600120", :width => "133"}/
-        %img.logo-right{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?2960600120"}/
-    %footer.footer
-      .footer-contents
-        %ul.content
-          %li.footer-cell
-            %h2.footer-head メルカリについて
-            %ul.footer-bottoms
-              %li
-                %a{:href => "https://about.mercari.com/"} 会社概要（運営会社）
-              %li
-                %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
-              %li
-                %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
-              %li
-                %a{:href => "https://www.mercari.com/jp/tos_paid_point/"} メルカリ利用規約・有償ポイントに関する特約
-              %li
-                %a{:href => "https://www.mercari.com/jp/tos_smartphone_support/"} あんしんスマホサポート制度に関する利用特約
-              %li
-                %a{:href => "https://www.mercari.com/jp/compliance/"} コンプライアンスポリシー
-              %li
-                %a{:href => "https://www.mercari.com/jp/data_security/"} 個人データの安全管理に係る基本方針
-              %li
-                %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-              %li
-                %a{:href => "https://www.mercari.com/jp/shikin_kessai/"} 資金決済法に基づく表示
-              %li
-                %a{:href => "https://about.mercari.com/csr/safety/"} 法令順守と犯罪抑止のために
-              %li
-                %a{:href => "https://www.mercari.com/jp/jobs/"} 採用情報
-          %li.footer-cell
-            %h2.footer-head メルカリを見る
-            %ul.footer-bottoms
-              %li
-                %a{:href => "https://www.mercari.com/jp/category/"} カテゴリー一覧
-              %li
-                %a{:href => "https://www.mercari.com/jp/brand/"} ブランド一覧
-              %li
-                %a{:href => "https://www.mercari.com/jp/area/"} 出品地域一覧
-              %li
-                %a{:href => "https://jp-news.mercari.com/", :target => "_blank"} 公式ブログ
-              %li
-                %a{:href => "https://twitter.com/mercari_jp", :target => "_blank"} 公式Twitter
-              %li
-                %a{:href => "https://www.facebook.com/mercarijp", :target => "_blank"} 公式Facebook
-          %li.footer-cell
-            %h2.footer-head ヘルプ＆ガイド
-            %ul.footer-bottoms
-              %li
-                %a{:href => "https://www.mercari.com/jp/help_center/"} メルカリガイド
-              %li
-                %a{:href => "https://www.mercari.com/jp/logo-guidelines/"} メルカリロゴ利用ガイドライン
-              %li
-                %a{:href => "https://about.mercari.com/press/news/"} お知らせ
-              %li
-                %a{:href => "https://www.mercari.com/jp/rakuraku-mercari/"} らくらくメルカリ便とは
-              %li
-                %a{:href => "https://www.mercari.com/jp/yuyu-mercari/"} ゆうゆうメルカリ便とは
-              %li
-                %a{:href => "https://www.mercari.com/jp/rakuraku-ogata/"} 大型らくらくメルカリ便とは
-              %li
-                %a{:href => "https://www.mercari.com/jp/guide/car/"} 車体取引ガイド
-              %li
-                %a{:href => "https://www.mercari.com/jp/refund-returns/"} 返品・返金ポリシー
-              %li
-                %a{:href => "https://www.mercari.com/jp/safe/description/", :target => "_blank"} メルカリあんしん・あんぜん宣言！
-              %li
-                %a{:href => "https://www.mercari.com/jp/authenticity/"} 偽ブランド品撲滅への取り組み
-              %li
-                %a{:href => "https://www.mercari.com/jp/box/"} メルカリボックス
-          %li.footer-cell
-            %h2.footer-head 国
-            %ul.footer-lang
-              %li
-                %a{:href => "https://www.mercari.com/"}
-                  %img{alt: "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?2960600120", width: "22"}>/
-                  United States
-              %li
-                %a{:href => "https://www.mercari.com/uk/"}
-                  %img{:alt => "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?2960600120", width: "22"}>/
-                  United Kingdom
-              %li
-                %a.active{:href => "https://www.mercari.com/jp/"}
-                  %img{alt: "", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?2960600120", width: "22"}>/
-                  日本
-      %a.footer-logo{:href => "https://www.mercari.com/jp/"}
-        %img{alt: "mercari", height: "33", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2960600120", width: "115"}/
-      %p.footer-copyright
-        %small © 2018 Mercari
+          -if @item.brand == nil
+            - @category_items.each do |c_item|
+              %section.items-box
+                = link_to item_path(@item) do
+                  %figure.items-box-photo
+                    = image_tag c_item.images.first.image_url, class: ".is-higher-height.lazyloaded", alt: "#{c_item.name}", "date-src": "c_item.images.first.image_url"
+                  .items-box-body
+                    %h3.items-box-name.font-2
+                      = "#{c_item.name}"
+                    .items-box-num.clearfix
+                      .items-box-price.font-5
+                        ¥
+                        = converting_to_jpy(c_item.price)
+                      .items-box-likes.font-2
+                        %i.far.fa-heart
+                        %span 2
+                      %p.item-box-tax (税込)
+          - else
+            - @brand_items.each do |b_item|
+              %section.items-box
+                = link_to item_path(@item) do
+                  %figure.items-box-photo
+                    = image_tag b_item.images.first.image_url, class: ".is-higher-height.lazyloaded", alt: "#{b_item.name}", "date-src": "b_item.images.first.image_url"
+                  .items-box-body
+                    %h3.items-box-name.font-2
+                      = "#{b_item.name}"
+                    .items-box-num.clearfix
+                      .items-box-price.font-5
+                        ¥
+                        = converting_to_jpy(b_item.price)
+                      .items-box-likes.font-2
+                        %i.far.fa-heart
+                        %span 2
+                      %p.item-box-tax (税込)
+
+    = render 'shared/footer'

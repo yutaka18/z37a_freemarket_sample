@@ -31,7 +31,10 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @user_items = Item.where(user_id: @item.id).limit(6)
+    @images = @item.images.order('created_at DESC')
+    @user_items = Item.where(user_id: @item.id).order('created_at DESC').limit(6)
+    @category_items = Item.where(category_id: @item.id).order('created_at DESC').limit(6)
+    @brand_items = Item.where(brand: @item.brand).order('created_at DESC').limit(6)
   end
 
   def buy
