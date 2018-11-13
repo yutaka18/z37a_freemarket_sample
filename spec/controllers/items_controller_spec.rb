@@ -2,20 +2,24 @@ require 'rails_helper'
 
 describe ItemsController, type: :controller do
   let(:user) { create(:user) }
-  let(:item) { create(:item, user_id: user.id) }
+  let(:item) { create(:item) }
+  let(:category) { create(:category) }
+  let(:mitem) { create(:mitem) }
+  let(:sitem) { create(:sitem) }
 
   describe 'GET #index' do
+    context 'is assigns' do
+      it '@item_woman' do
+        items = create_list(:item, 4, category_id: category.id, mitem_id: mitem.id, sitem_id: sitem.id, user_id: user.id )
+        get :index, params: { category_id: 1 }
+        expect(assigns(:item_woman)).to match(items.sort{ |a, b| b.created_at <=> a.created_at })
+      end
 
-    it 'populates a @item_woman of items ordered by created_at DESC' do
-      item_woman = create_list(:item, 4, category_large_id: 1, user_id: user.id)
-      get :index
-      expect(assigns(:item_woman)).to match(item_woman.sort{ |a, b| b.created_at <=> a.created_at } )
-    end
-
-    it 'populates a @item_chanel of item ordered by created_at DESC' do
-      item_chanel = create_list(:item, 4, brand: "シャネル", user_id: user.id)
-      get :index
-      expect(assigns(:item_chanel)).to match(item_chanel.sort{ |a, b| b.created_at <=> a.created_at })
+      it '@item_chanels' do
+        items = create_list(:item, 4, brand: "シャネル", category_id: category.id, mitem_id: mitem.id, sitem_id: sitem.id, user_id: user.id )
+        get :index
+        expect(assigns(:item_chanels)).to match(items.sort{ |a, b| b.created_at <=> a.created_at })
+      end
     end
 
     it 'renders the :index template' do
@@ -26,10 +30,8 @@ describe ItemsController, type: :controller do
 
   describe 'GET #new' do
     context 'log in' do
-      before do
-        login user
-      end
       it 'renders the :new template' do
+        login user
         get :new
         expect(response).to render_template :new
       end
@@ -44,14 +46,13 @@ describe ItemsController, type: :controller do
   end
 
   describe 'POST #create' do
-    let(:params) { { user_id: user.id, item: attributes_for(:item) }}
-
     context 'log in' do
       before do
         login user
       end
 
       context 'can save' do
+        let(:params) { { category_id: category.id, mitem_id: mitem.id, sitem_id: sitem.id, item: attributes_for(:item) } }
         subject {
           post :create,
           params: params
