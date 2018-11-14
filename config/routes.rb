@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resource   :user
   scope module: :users do
     resource :card, only: :show
-    resources :profiles, only: [:edit, :index]
+    resource :profiles, only: [:edit, :show]
     resource :identification, only: :edit
     resource :sell, only: [:show, :edit]
   end
