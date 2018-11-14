@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_item, expect: [:show, :edit, :destory]
-  before_action :set_desc_images, expect: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :destroy]
+  before_action :set_desc_images, only: [:show, :edit]
 
   def index
     @item_woman = Item.where(category_id: 1).where.not(brand: ["シャネル", "ルイヴィトン", "シュプリーム", "ナイキ"] ).order("created_at DESC").limit(4)
@@ -41,6 +41,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    @item.destroy if @item.user_id == current_user.id
+    redirect_to sell_path
   end
 
   def buy

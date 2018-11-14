@@ -122,18 +122,20 @@
           - else
             = "送料込み"
       .item-description
-        %p.item-description-inner 仮です。
+        %p.item-description-inner
+          = @item.content
     .item-detail-message
       .message-container
         .message-content
           %form.command-form{:action => "https://www.mercari.com/jp/comment/add/", :method => "POST"}
-            %button.message-submit.btn-default.btn-red{:type => "submit"}
-              %span 商品の編集
+            .message-submit.btn-default.btn-red
+              = link_to '商品の編集', item_path(@item)
             %p.message-text-center or
-            %button.message-submit.btn-default.btn-gray{:type => "submit"}
-              %span 出品を一旦停止する
-            %button.message-submit.btn-default.btn-gray{:type => "submit"}
-              %span この商品を削除する
+            .message-submit.btn-default.btn-gray
+              = link_to '出品を一旦停止する', item_path(@item)
+            .message-submit.btn-default.btn-gray
+              = link_to 'この商品を削除する', item_path(@item), method: :delete, data: {confirm: "確認\n削除すると二度と復活できません。\n削除する代わりに停止することもできます。\n\n本当に削除しますか？"}
+              -# 削除確認のメッセージは仮置き
     .item-detail-message
       .message-container
         .message-content
@@ -143,7 +145,8 @@
             %input{:name => "item_id", :type => "hidden", :value => "m81006698765"}/
             %input{:name => "redirect_url_key", :type => "hidden", :value => "item_detail"}/
             %textarea.textarea-default{:name => "body", :type => "text", :value => ""}
-            %button.message-submit.btn-default.btn-gray{:type => "submit"}
-              %span コメントする
+            .message-submit.btn-default.btn-gray
+              = link_to 'コメントする', item_path(@item)
+
 
     = render 'shared/footer-nosell'
