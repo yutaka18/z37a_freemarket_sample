@@ -40,6 +40,9 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  def destroy
+  end
+
   def buy
   end
 
