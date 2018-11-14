@@ -22,25 +22,25 @@
               = link_to "売却済", sell_path
         .tab-content
           %ul#mypage-tab-transaction-now.mypage-item-list.tab-pane.active
+
             %li
-            / ここのパスは編集用ビュー画面作成後変更します
-            = link_to root_path do
-              .mypage-item-link
-                %figure
-                  / 画像のパスおよび商品名は、まだ編集用ビュー画面作成後していないためルーティング設定していません。編集用ビュー画面作成後サーバーサイドの作業を行うときに設定いたします。
-                  %img.is-higher-width.lazyloaded{alt: "", "data-src": "//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m23020902720_1.jpg?1542004459", src: "//static-mercari-jp-imgtr2.akamaized.net/thumb/photos/m23020902720_1.jpg?1542004459"}/
-                .mypage-item-body.show-stock-item
-                  .mypage-item-text
-                    超立体マスク
-                  %div
-                    %span.listing-item-count
-                      %i.far.fa-heart
-                      %span 0
-                    %span.listing-item-count
-                      %i.far.fa-comment-alt
-                      %span 0
-                    .mypage-item-status.bold.awaiting
-                      出品中
-                %i.fas.fa-angle-right
+              - @items.each do |item|
+                = link_to edit_item_path(item) do
+                  .mypage-item-link
+                    %figure
+                      = image_tag item.images.first.image_url, class: 'is-higher-width lazyloaded'
+                    .mypage-item-body.show-stock-item
+                      .mypage-item-text
+                        = item.name
+                      %div
+                        %span.listing-item-count
+                          %i.far.fa-heart
+                          %span 0
+                        %span.listing-item-count
+                          %i.far.fa-comment-alt
+                          %span 0
+                        .mypage-item-status.bold.awaiting
+                          出品中
+                    %i.fas.fa-angle-right
 
 = render 'shared/footer'

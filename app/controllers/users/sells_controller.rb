@@ -3,7 +3,7 @@ class Users::SellsController < ApplicationController
   before_action :set_user
 
   def show
-    # @items = Item.find(params[:item_id])
+    @items = @user.items
   end
 
   def edit
