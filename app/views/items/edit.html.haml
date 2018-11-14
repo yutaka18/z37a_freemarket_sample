@@ -2,7 +2,8 @@
   .defalt-container
     = render "shared/header"
     %section.item-box-container.u-single-container
-      %h1.item-name ポーチ
+      %h1.item-name
+        = @item.name
       .item-main-content.clearfix
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
@@ -10,7 +11,7 @@
               .owl-stage{style: "left: 0px; width: 300px;"}
                 .owl-item.active{style: "width: 300px;"}
                   .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
-                    %img.owl-lazy{alt: "ポーチ", "data-src": "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", style: "opacity: 1;"}/
+                    %img.owl-lazy{alt: @item.name, "data-src": "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", style: "opacity: 1;"}/
             .owl-nav.disabled
               .owl-prev prev
               .owl-next next
@@ -22,7 +23,8 @@
             %tr
               %th 出品者
               %td
-                %a{href: "https://www.mercari.com/jp/u/966879579/"} Yosuke  Yamazaki
+                %a{href: "https://www.mercari.com/jp/u/966879579/"}
+                  = @item.user.nickname
                 %div
                   .item-user-ratings
                     %i.fas.fa-grin-beam
@@ -36,36 +38,46 @@
             %tr
               %th カテゴリー
               %td
-                %a{href: "https://www.mercari.com/jp/category/4/"}
-                  %div インテリア・住まい・小物
-                %a{href: "https://www.mercari.com/jp/category/70/"}
+                %a{href: "https://www.mercari.com/jp/category/#{@item.category.id}/"}
+                  %div
+                    = @item.category.name
+                %a{href: "https://www.mercari.com/jp/category/#{@item.mitem.id}/"}
                   .item-detail-table-sub-sub-category
                     %i.fas.fa-angle-right>
-                    その他
+                    = @item.mitem.name
             %tr
               %th ブランド
               %td
+                = @item.brand
+
             %tr
               %th 商品の状態
-              %td 全体的に状態が悪い
+              %td
+                = @item.condition
             %tr
               %th 配送料の負担
-              %td 着払い(購入者負担)
+              %td
+                = @item.burden
             %tr
               %th 配送の方法
-              %td 未定
+              %td
+                = @item.shipping_method
             %tr
               %th 配送元地域
               %td
-                %a{href: "https://www.mercari.com/jp/area/13/"}
-                  東京都
+                %a{href: "https://www.mercari.com/jp/area/#{@item.class.from_prefectures[@item.from_prefecture]}/"}
+                  = @item.from_prefecture
             %tr
               %th 発送日の目安
-              %td 4~7日で発送
+              %td
+                = @item.shipping_days
       .item-price-box.text-center
-        %span.item-price.bold ¥ 100,000
+        %span.item-price.bold ¥
+        %span.item-price.bold
+          = @item.price.to_s(:delimited)
         %span.item-tax (税込)
-        %span.item-shipping-fee 着払い
+        %span.item-shipping-fee
+          = @item.burden
       .item-description
         %p.item-description-inner 仮です。
     .item-detail-message
