@@ -8,23 +8,61 @@
         .item-photo
           .owl-carousel.owl-loaded.owl-drag
             .owl-stage-outer
-              .owl-stage{style: "left: 0px; width: 300px;"}
+              .owl-stage{style: "left: 0px; width: 1200px;"}
                 .owl-item.active{style: "width: 300px;"}
                   .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
-                    %img.owl-lazy{alt: @item.name, "data-src": "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", src: "https://static-mercari-jp-imgtr2.akamaized.net/item/detail/orig/photos/m81006698765_1.jpg?1540782839", style: "opacity: 1;"}/
+                    = image_tag @images.first.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.first.image_url, style: "opacity: 1;"
+                - if @images.length == 2
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.second.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.second.image_url, style: "opacity: 1;"
+                - elsif @images.length == 3
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.second.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.second.image_url, style: "opacity: 1;"
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.third.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.third.image_url, style: "opacity: 1;"
+                - elsif @images.length == 4
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.second.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.second.image_url, style: "opacity: 1;"
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.third.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.third.image_url, style: "opacity: 1;"
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.fourth.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.fourth.image_url, style: "opacity: 1;"
             .owl-nav.disabled
               .owl-prev prev
               .owl-next next
-            .owl-dots.disabled{style: "display: none;"}
-              .owl-dot.active
-                %span
+            %ul.owl-dots.disabled
+              %li.owl-dot.active
+                = image_tag @images.first.image_url
+              - if @images.length == 2
+                %li.owl-dot
+                  = image_tag @images.second.image_url
+              - elsif @images.length == 3
+                %li.owl-dot
+                  = image_tag @images.second.image_url
+                %li.owl-dot
+                  = image_tag @images.third.image_url
+              - elsif @images.length == 4
+                %li.owl-dot
+                  = image_tag @images.second.image_url
+                %li.owl-dot
+                  = image_tag @images.third.image_url
+                %li.owl-dot
+                  = image_tag @images.fourth.image_url
         %table.item-detail-table
           %tbody
             %tr
               %th 出品者
               %td
-                %a{href: "https://www.mercari.com/jp/u/966879579/"}
-                  = @item.user.nickname
+                - if user_signed_in?
+                  = link_to "#{@item.user.nickname}", user_path(@item.user)
+                - else
+                  = link_to "#{@item.user.nickname}", user_path
                 %div
                   .item-user-ratings
                     %i.fas.fa-grin-beam
@@ -38,18 +76,21 @@
             %tr
               %th カテゴリー
               %td
-                %a{href: "https://www.mercari.com/jp/category/#{@item.category.id}/"}
+                = link_to item_path(@item.category) do
                   %div
-                    = @item.category.name
-                %a{href: "https://www.mercari.com/jp/category/#{@item.mitem.id}/"}
+                    = "#{@item.category.name}"
+                = link_to item_path(@item.mitem) do
+                  .item-detail-table-sub-category
+                    = fa_icon 'angle-right'
+                    = "#{@item.mitem.name}"
+                = link_to item_path(@item.sitem) do
                   .item-detail-table-sub-sub-category
-                    %i.fas.fa-angle-right>
-                    = @item.mitem.name
+                    = fa_icon 'angle-right'
+                    = "#{@item.sitem.name}"
             %tr
               %th ブランド
               %td
-                = @item.brand
-
+                = link_to "#{@item.brand}", item_path(@item)
             %tr
               %th 商品の状態
               %td
@@ -65,8 +106,7 @@
             %tr
               %th 配送元地域
               %td
-                %a{href: "https://www.mercari.com/jp/area/#{@item.class.from_prefectures[@item.from_prefecture]}/"}
-                  = @item.from_prefecture
+                = link_to "#{@item.from_prefecture}", item_path(@item.class.from_prefectures[@item.from_prefecture])
             %tr
               %th 発送日の目安
               %td
@@ -77,7 +117,10 @@
           = @item.price.to_s(:delimited)
         %span.item-tax (税込)
         %span.item-shipping-fee
-          = @item.burden
+          - if @item.burden == 1
+            = "着払い"
+          - else
+            = "送料込み"
       .item-description
         %p.item-description-inner 仮です。
     .item-detail-message
