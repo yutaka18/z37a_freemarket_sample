@@ -49,6 +49,7 @@
       .tab-pane.active {
         display: block;
         .mypage-item-link {
+          position: relative;
           display: block;
           padding: 16px;
           color: #333;
@@ -109,8 +110,8 @@
           }
           .fa-angle-right {
             position: absolute;
-            top: 320px;
-            right: 250px;
+            top: 50%;
+            right: 16px;
             transform: translate(0, -50%);
             font-size: 24px;
           }
