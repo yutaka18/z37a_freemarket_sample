@@ -37,6 +37,10 @@ class ItemsController < ApplicationController
     @brand_items = Item.where(brand: @item.brand).order('created_at DESC').limit(6)
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
   def buy
   end
 
