@@ -12,33 +12,57 @@
                 .owl-item.active{style: "width: 300px;"}
                   .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
                     = image_tag @images.first.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.first.image_url, style: "opacity: 1;"
-                .owl-item{style: "width: 300px;"}
-                  .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
-                    = image_tag @images.second.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.second.image_url, style: "opacity: 1;"
-                .owl-item{style: "width: 300px;"}
-                  .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
-                    = image_tag @images.third.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.third.image_url, style: "opacity: 1;"
-                .owl-item{style: "width: 300px;"}
-                  .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
-                    = image_tag @images.fourth.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.fourth.image_url, style: "opacity: 1;"
+                - if @images.length == 2
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.second.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.second.image_url, style: "opacity: 1;"
+                - elsif @images.length == 3
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.second.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.second.image_url, style: "opacity: 1;"
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.third.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.third.image_url, style: "opacity: 1;"
+                - elsif @images.length == 4
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.second.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.second.image_url, style: "opacity: 1;"
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.third.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.third.image_url, style: "opacity: 1;"
+                  .owl-item{style: "width: 300px;"}
+                    .owl-item-inner.is-higher-width{"data-thumbnail-class-name": " is-higher-width"}
+                      = image_tag @images.fourth.image_url, class: "owl-lazy", alt: "#{@item.name}", "data-src": @images.fourth.image_url, style: "opacity: 1;"
             .owl-nav.disabled
               .owl-prev prev
               .owl-next next
             %ul.owl-dots.disabled
               %li.owl-dot.active
                 = image_tag @images.first.image_url
-              %li.owl-dot
-                = image_tag @images.second.image_url
-              %li.owl-dot
-                = image_tag @images.third.image_url
-              %li.owl-dot
-                = image_tag @images.fourth.image_url
+              - if @images.length == 2
+                %li.owl-dot
+                  = image_tag @images.second.image_url
+              - elsif @images.length == 3
+                %li.owl-dot
+                  = image_tag @images.second.image_url
+                %li.owl-dot
+                  = image_tag @images.third.image_url
+              - elsif @images.length == 4
+                %li.owl-dot
+                  = image_tag @images.second.image_url
+                %li.owl-dot
+                  = image_tag @images.third.image_url
+                %li.owl-dot
+                  = image_tag @images.fourth.image_url
         %table.item-detail-table
           %tbody
             %tr
               %th 出品者
               %td
-                = link_to "#{@item.user.nickname}", user_path(@item.user)
+                - if user_signed_in?
+                  = link_to "#{@item.user.nickname}", user_path(@item.user)
+                - else
+                  = link_to "#{@item.user.nickname}", user_path
                 %div
                   .item-user-ratings
                     %i.fas.fa-grin-beam
@@ -97,8 +121,11 @@
             = "着払い"
           - else
             = "送料込み"
-      %a.item-buy-btn{"data-client" => "hidden", :href => "https://www.mercari.com/jp/transaction/buy/m81006698765/"}
-        購入画面に進む
+      .item-buy-btn
+        - if user_signed_in?
+          = link_to "購入画面に進む", user_path(@item.user)
+        - else
+          = link_to "購入画面に進む", users_path
       .item-description
         %p.item-description-inner
           = "#{@item.content}"

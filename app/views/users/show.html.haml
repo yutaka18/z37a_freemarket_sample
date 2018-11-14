@@ -10,7 +10,8 @@
           = link_to '' do
             %figure
               = image_tag 'member_photo_noimage_thumb.png', class: 'avatar'
-            %h2.user__name.bold d_riko
+            %h2.user__name.bold
+              = current_user.nickname
             .user__result
               .user__result__evolute
                 評価
