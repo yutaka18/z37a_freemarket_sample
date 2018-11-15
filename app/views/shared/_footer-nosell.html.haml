@@ -4,15 +4,15 @@
       %h2.banner-title スマホでかんたんフリマアプリ
       %p.banner-text 今すぐ無料ダウンロード！
       .app-banner__contain-inner__logo
-        %img.logo-left{:alt => "", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?2960600120", :width => "68"}/
+        = image_tag 'mercari_icon.png', alt: "", width: 68, class: "logo-left"
         %ul.clearfix
           %li.ios-logo
             = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", target: "_blank" do
-              = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?582886128", alt: "", height: 40, widht: 133
+              = image_tag 'app-store.svg', alt: "", height: 40, widht: 133
           %li.android-logo
             = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", target: "_blank" do
-              = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?2960600120", alt: "", height: 40, widht: 133
-    = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?2960600120", alt: "", class: "logo-right"
+              = image_tag 'google-play.svg', alt: "", height: 40, widht: 133
+    = image_tag 'download_content_pc.png', alt: "", class: "logo-right"
 %footer.footer
   .footer-contents
     %ul.content
@@ -86,19 +86,18 @@
         %ul.footer-lang
           %li
             = link_to 'https://www.mercari.com/' do
-              = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_us.png?2960600120", alt: "", width: 22
+              = image_tag 'flag_us.png', alt: "", width: 22
               United States
           %li
             = link_to 'https://www.mercari.com/uk/' do
-              = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_uk.png?2960600120", alt: "", width: 22
+              = image_tag 'flag_uk.png', alt: "", width: 22
               United Kingdom
-
           %li
             = link_to 'https://www.mercari.com/jp/' do
-              = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/flag_jp.png?2960600120", alt: "", width: 22
+              = image_tag 'flag_jp.png', alt: "", width: 22
               日本
   .footer-logo
     = link_to 'https://www.mercari.com/jp/' do
-      = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?2960600120", alt: "mercari", width: 115, height: 33
+      = image_tag 'logo-white.svg', alt: "mercari", width: 115, height: 33
   %p.footer-copyright
     %small © 2018 Mercari
