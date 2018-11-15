@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+  before_action :ensure_item_user, only: [:edit, :destroy]
   before_action :set_item, only: [:show, :edit, :destroy]
   before_action :set_desc_images, only: [:show, :edit]
 
@@ -41,7 +42,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy if @item.user_id == current_user.id
+    @item.destroy
     redirect_to sell_path
   end
 
@@ -59,6 +60,13 @@ class ItemsController < ApplicationController
 
   def set_desc_images
     @images = @item.images.order('created_at DESC')
+  end
+
+  def ensure_item_user
+    @item = Item.find(params[:id])
+    if @item.user_id != current_user.id
+      redirect_to :root
+    end
   end
 
   def item_params
