@@ -1,6 +1,14 @@
 %body
   .defalt-container
     = render "shared/header"
+
+    .bread_crumbs
+      %ul.bread
+        %li.bread
+        = link_to items_path(@item) do
+          - breadcrumb :item, @item
+          = breadcrumbs
+
     %section.item-box-container.u-single-container
       %h1.item-name
         = @item.name
@@ -106,7 +114,7 @@
             %tr
               %th 配送元地域
               %td
-                = link_to "#{@item.from_prefecture}", item_path(@item.class.from_prefecture[@item.from_prefecture])
+                = link_to "#{@item.from_prefecture}", item_path(@item.class.from_prefectures[@item.from_prefecture])
             %tr
               %th 発送日の目安
               %td
@@ -301,4 +309,4 @@
                         %span 2
                       %p.item-box-tax (税込)
 
-    = render 'shared/footer_nosell'
+    = render 'shared/footer-nosell'
